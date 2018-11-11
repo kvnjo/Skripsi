@@ -1,0 +1,139 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[cm]{fullpage}
+\pagestyle{myheadings}
+\usepackage{etoolbox}
+\usepackage{setspace} 
+\usepackage{lipsum} 
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+
+\makeatletter
+\renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
+\renewcommand{\thispagestyle}[1]{}
+\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Ganjil 2018/2019}}}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\baselinestretch}{1}
+\setlength{\parindent}{0 pt}
+\setlength{\parskip}{6 pt}
+
+\onehalfspacing
+ 
+\begin{document}
+
+\title{\@judultopik}
+\author{\nama \textendash \@npm} 
+
+%tulis nama dan NPM anda di sini:
+\newcommand{\nama}{Kevin Jonathan}
+\newcommand{\@npm}{2014730020}
+\newcommand{\@judultopik}{Ant Colony Optimization (ACO) untuk Permasalahan Multi Objective Flowshop Scheduling (MOFSP)} % Judul/topik anda
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\tanggal}{06/09/2018}
+
+% Dokumen hasil template ini harus dicetak bolak-balik !!!!
+
+\maketitle
+
+\pagenumbering{arabic}
+
+\section{Deskripsi}
+
+Penjadwalan produksi merupakan aktivitas yang tidak terpisahkan dalam suatu perusahaan {\it manufakturing}. Penjadwalan ({\it scheduling}) sendiri didefinisikan sebagai suatu proses pengalokasian sumber daya atau mesin-mesin yang ada untuk melaksanakan tugas-tugas yang ada dalam suatu waktu tertentu (Baker, 1974). Sedangkan yang dimaksud dengan proses produksi adalah serangkaian langkah-langkah yang digunakan untuk mentransformasikan {\it Input} menjadi {\it Output}.
+
+Proses penjadwalan {\it Flow Shop} adalah salah satu metode penjadwalan produksi di mana urutan mesin yang digunakan untuk setiap proses dalam seluruh pekerjaan harus sama. Dalam penelitian - penelitian penjadwalan sebelumnya hanya difokuskan pada satu kriteria saja ({\it single}) namun pada penelitian kali ini akan menggunakan lebih dari satu kriteria ({\it multiple}). Banyak algoritma yang dapat digunakan untuk menentukan urutan  pengerjaan pekerjaan dalam proses penjadwalan produksi {\it Flow Shop}. Salah satu algoritma yang dapat digunakan dalam proses penjadwalan produksi {\it Multi Objective Flow Shop} adalah algoritma {\it Ant Colony Optimization}. Algoritma {\it Ant Colony Optimization} adalah algoritma yang mengadopsi perilaku koloni semut yang dikenal sebagai sistem semut. Algoritma ini menyelesaikan permasalahan berdasarkan tingkah laku semut dalam sebuah koloni yang sedang mencari sumber makanan.
+
+Penelitian ini dibuat untuk mempelajari, mengaplikasikan, serta mengukur kinerja Algoritma {\it Ant Colony Optimization} pada proses penjadwalan {\it Multi Objective Flow Shop Scheduling} (MOFSP). Pada skripsi ini juga akan dibuat perangkat lunak yang dapat menerima n job yang masing-masing terdiri atas m buah operasi dan m buah mesin. Setiap operasi hanya ditangani oleh sebuah mesin dan setiap mesin hanya bisa menangani satu operasi. Urutan operasi dari setiap job adalah sama.
+
+\section{Rumusan Masalah}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Apa itu penjadwalan {\it Multi Objective Flowshop Scheduling} (MOFSP) ?
+	\item Apa itu algoritma {\it Ant Colony Optimization} (ACO) ?
+	\item Bagaimana cara kerja dan implementasi algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP ?
+	\item Bagaimana kinerja algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP ?
+
+\end{enumerate}
+
+\section{Tujuan}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Menjelaskan penjadwalan {\it Multi Objective Flowshop Scheduling} (MOFSP).
+	\item Menjelaskan algoritma {\it Ant Colony Optimization} (ACO) .
+	\item Menampilkan  cara kerja dan implementasi algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP .
+	\item Mengetahui kinerja algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP dengan bantuan {\it benchmark} tertentu.
+\end{enumerate}
+
+\section{Deskripsi Perangkat Lunak}
+
+Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
+\begin{itemize}
+	\item Perangkat lunak dapat menerima kasus MOFSP untuk dicari solusinya.
+	\item Perangkat lunak dapat menjalankan algoritma {\it Ant Colony Optimization}.
+	\item Perangkat lunak dapat menghasilkan proses optimasi menggunakan algoritma {\it Ant Colony Optimization}.
+	\item Perangkat lunak dapat menghasilakan urutan pengerjaan atau solusi terbaik untuk permasalahan MOFSP.
+	
+\end{itemize}
+
+\section{Detail Pengerjaan Skripsi}
+
+Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
+	\begin{enumerate}
+		\item Melakukan studi literatur : penjadwalan proses produksi secara umum, MOFSP, ACO, dan aplikasi ACO untuk masalah penjadwalan.
+		\item Melakukan analisa aplikasi ACO pada masalah MOFSFP.
+		\item Mengembangkan perangkat lunak (analisis, desain, implementasi, dan pengujian).
+		\item Melakukan eksperimen dengan sebuah {\it benchmark}. 
+		\item Menulis dokumen skripsi.
+	\end{enumerate}
+
+\section{Rencana Kerja}
+
+Rincian capaian yang direncanakan di Skripsi 1 adalah sebagai berikut:
+\begin{enumerate}
+\item Melakukan studi literatur penjadwalan proses produksi secara umum.
+\item Melakukan studi literatur penjadwalan {\it Multi Objective Flowshop Scheduling} (MOFSP).
+\item Melakukan studi literatur ACO serta mengaplikasikan pada permasalahan MOFSP.
+\item Menulis sebagian dokumen skripsi, dari bab 1 sampai dengan sebagian bab 2.
+
+\end{enumerate}
+
+Sedangkan yang akan diselesaikan di Skripsi 2 adalah sebagai berikut:
+\begin{enumerate}
+\item Melakukan analisis, perancangan, implementasi, dan pengujian perangkat lunak.
+\item Melakukan eksperimen dengan bantuan {\it benchmark} tertentu.
+\item Menyelesaikan penulisan dokumen skripsi.
+
+\end{enumerate}
+
+\newpage
+\vspace{1cm}
+\centering Bandung, \tanggal\\
+\vspace{2cm} \nama \\ 
+\vspace{1cm}
+
+Menyetujui, \\
+\ifdefstring{\jumpemb}{2}{
+\vspace{1.5cm}
+\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Utama
+\end{minipage} \hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Pendamping
+\end{minipage}
+\vspace{0.5cm}
+}{
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
+}
+\end{document}
+

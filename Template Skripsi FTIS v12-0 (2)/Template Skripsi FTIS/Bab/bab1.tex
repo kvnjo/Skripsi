@@ -1,0 +1,105 @@
+%versi 2 (8-10-2016) 
+
+\chapter{Pendahuluan}
+\label{chap:intro}
+   
+\section{Latar Belakang}
+\label{sec:label}
+
+%Bagian ini akan diisi dengan apa yang melatarbelakangi pembuatan template skripsi ini.
+%Termasuk juga masalah-masalah yang akan dihadapi untuk membuatnya, termasuk kurangnya kemampuan penguasaan \LaTeX{} sehingga template ini dibuat dengan mengandalkan berbagai contoh yang tersebar di dunia maya, yang digabung-gabung menjadi satu jua.
+%Bagian lain juga akan dilengkapi, untuk sementara diisi dengan lorem ipsum versi bahasa inggris.
+
+Data graf dapat berukuran sangat besar. Salah satu contoh representasi dari graf yang berukuran besar adalah jaringan relasi pertemanan pada media sosial. Misalnya pada media sosial {\it Facebook}, dimana simpulnya adalah para pengguna {\it Facebook} sedangkan sisi-sisinya adalah pertemanan antar penggunanya.
+
+Agar dapat dianalisis pada sistem pararel, graf tersebut perlu dipecah-pecah menjadi sub-graf lalu disimpan pada {\it node-node} {\it slave} dari masing-masing komputer. Hasil analisis dari pemecahan graf dapat digunakan untuk kepentingan yang lebih lanjut. Pemecahan graf tersebut dapat menggunakan bantuan berbagai macam algoritma pemecahan graf yang sudah ada.
+
+Pada skripsi ini, akan dibuat perangkat lunak yang dapat menerima {\it input} data graf dan mengolahnya sedemikian rupa dengan struktur data yang tepat sehingga menghasilkan {\it output} berupa sub-graf yang beraturan dan seimbang. Perangkat lunak ini juga akan menampilkan hasil visualisasi dari {\it input} dan {\it output} pemecahan graf. Dari berbagai macam algoritma yang dapat digunakan untuk memecah graf, dipilih satu algoritma yaitu algoritma {\it vertex cut}.
+
+
+%\dtext{5-10}
+
+\section{Rumusan Masalah}
+\label{sec:rumusan}
+%Bagian ini akan diisi dengan penajaman dari masalah-masalah yang sudah diidentifikasi di bagian sebelumnya. 
+\begin{itemize}
+	\item Bagaimana merancang struktur graf ke dalam struktur data perangkat lunak ?
+	\item Bagaimana cara memvisualisasikan graf dengan benar ?
+	\item Bagaimana cara merumuskan algoritma yang tepat untuk melakukan pemecahan graf berbasis {\it vertex}?
+	\item Bagaimana membangun perangakat lunak yang dapat memecah graf berbasis {\it vertex} dari berbagai data graf ?
+	\item Bagaimana perbandingan hasil pemecahan graf dengan pemecahan graf menggunakan sistem terdistribusi : {\it GraphX} pada {\it Spark} ?
+
+\end{itemize}
+
+
+%\dtext{6}
+
+\section{Tujuan}
+\label{sec:tujuan}
+Berdasarkan rumusan masalah tersebut, tujuan dari tugas akhir ini adalah sebagai berikut :
+\begin{itemize}
+\item Melakukan perancangan data graf ke dalam stuktur data yang tepat. 
+\item Menampilkan visualisasi graf dalam format grafis.
+\item Mempelajari dan mengimplementasikan teknik {\it vertex cut}.
+\item Merancang dan membangun perangkat lunak berbasis {\it vertex} yang dapat memecah graf dari berbagai data graf.
+\item Membandingkan hasil pemecahan graf dengan pemecahan graf menggunakan sistem terdistribusi : {\it GraphX} pada {\it Spark}.
+\end{itemize}
+
+
+\section{Batasan Masalah}
+\label{sec:batasan}
+%Untuk mempermudah pembuatan template ini, tentu ada hal-hal yang harus dibatasi, misalnya saja bahwa template ini bukan berupa style \LaTeX{} pada umumnya (dengan alasannya karena belum mampu jika diminta membuat seperti itu)
+
+%\dtext{8}
+
+\section{Metodologi}
+\label{sec:metlit}
+%Tentunya akan diisi dengan metodologi yang serius sehingga templatenya terkesan lebih serius.
+
+%\dtext{9}
+
+Penyusunan tugas akhir ini menggunakan metodologi sebagai berikut :
+\begin{enumerate}
+	\item Melakukan studi literatur : graf dan pemecahan graf untuk lingkungan pararel.
+		\item Melakukan studi literatur algoritma pemecahan graf.
+		\item Mengolah struktur data graf ke dalam stuktur data perangkat lunak.
+		\item Merancang visualisasi graf.
+		\item Merumuskan algoritma pemecahan graf yang tepat dan sesuai.
+		\item Mengimplementasikan teknik {\it vertex cut} untuk melakukan pemecahan graf.
+		\item Melakukan studi literatur : {\it GraphX} pada {\it Spark} dan RDD.
+		\item Melakukan eksperimen dari berbagai data graf dan membandingkan hasilnya dengan pemecahan graf menggunakan {\it GraphX} pada {\it Spark} .
+		\item Menulis dokumen skripsi.
+\end{enumerate}
+	
+
+
+\section{Sistematika Pembahasan}
+\label{sec:sispem}
+%Rencananya Bab 2 akan berisi petunjuk penggunaan template dan dasar-dasar \LaTeX.
+%Mungkin bab 3,4,5 dapt diisi oleh ketiga jurusan, misalnya peraturan dasar skripsi atau pedoman penulisan, tentu jika berkenan.
+%Bab 6 akan diisi dengan kesimpulan, bahwa membuat template ini ternyata sungguh menghabiskan banyak waktu.
+
+%\dtext{10}
+
+Bab 1 Pendahuluan\\
+Bab 1 berisi latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi penelitian dan sistematika pembahasan.\\
+
+
+Bab 2 Dasar Teori\\
+Bab 2 berisi \\
+
+
+Bab 3 Analisis\\
+Bab 3 berisi \\
+
+
+Bab 4 Perancangan\\
+Bab 4 berisi \\
+
+
+Bab 5 Implementasi, Pengujian dan Eksperimen\\
+Bab 5 berisi \\
+
+
+Bab 6 Kesimpulan dan Saran\\
+Bab 6 berisi kesimpulan dan saran.\\

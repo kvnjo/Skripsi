@@ -1,0 +1,8 @@
+graphfile: example/sample_graph.txt
+parts: 2
+algorithm: hashing
+
+Replication factor: 1.0
+Load relative standard deviation: 1.0
+Max partition size (edge cardinality): 1
+Max partition size (vertex cardinality): 2

@@ -1,0 +1,224 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage[cm]{fullpage}
+\pagestyle{myheadings}
+\usepackage{etoolbox}
+\usepackage{setspace} 
+\usepackage{lipsum} 
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+
+\makeatletter
+\renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
+\renewcommand{\thispagestyle}[1]{}
+\markright{\textbf{\textsc{Laporan Perkembangan Pengerjaan Skripsi\textemdash Sem. Ganjil 2018/2019}}}
+
+\onehalfspacing
+ 
+\begin{document}
+
+\title{\@judultopik}
+\author{\nama \textendash \@npm} 
+
+%ISILAH DATA BERIKUT INI:
+\newcommand{\nama}{Kevin Jonathan}
+\newcommand{\@npm}{2014730020}
+\newcommand{\tanggal}{11/11/2018} %Tanggal pembuatan dokumen
+\newcommand{\@judultopik}{Ant Colony Optimization (ACO) untuk Permasalahan Multi Objective Flowshop Scheduling (MOFSP)} % Judul/topik anda
+\newcommand{\kodetopik}{CEN4501}
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\pembA}{Cecilia E. Nugraheni}
+\newcommand{\pembB}{-}
+\newcommand{\semesterPertama}{45 - Ganjil 18/19} % semester pertama kali topik diambil, angka 1 dimulai dari sem Ganjil 96/97
+\newcommand{\lamaSkripsi}{1} % Jumlah semester untuk mengerjakan skripsi s.d. dokumen ini dibuat
+\newcommand{\kulPertama}{Skripsi 1} % Kuliah dimana topik ini diambil pertama kali
+\newcommand{\tipePR}{B} % tipe progress report :
+% A : dokumen pendukung untuk pengambilan ke-2 di Skripsi 1
+% B : dokumen untuk reviewer pada presentasi dan review Skripsi 1
+% C : dokumen pendukung untuk pengambilan ke-2 di Skripsi 2
+
+% Dokumen hasil template ini harus dicetak bolak-balik !!!!
+
+\maketitle
+
+\pagenumbering{arabic}
+
+\section{Data Skripsi} %TIDAK PERLU MENGUBAH BAGIAN INI !!!
+Pembimbing utama/tunggal: {\bf \pembA}\\
+Pembimbing pendamping: {\bf \pembB}\\
+Kode Topik : {\bf \kodetopik}\\
+Topik ini sudah dikerjakan selama : {\bf \lamaSkripsi} semester\\
+Pengambilan pertama kali topik ini pada : Semester {\bf \semesterPertama} \\
+Pengambilan pertama kali topik ini di kuliah : {\bf \kulPertama} \\
+Tipe Laporan : {\bf \tipePR} -
+\ifdefstring{\tipePR}{A}{
+			Dokumen pendukung untuk {\BF pengambilan ke-2 di Skripsi 1} }
+		{
+		\ifdefstring{\tipePR}{B} {
+				Dokumen untuk reviewer pada presentasi dan {\bf review Skripsi 1}}
+			{	Dokumen pendukung untuk {\bf pengambilan ke-2 di Skripsi 2}}
+		}
+		
+\section{Latar Belakang}
+
+Penjadwalan produksi merupakan aktivitas yang tidak terpisahkan dalam suatu perusahaan {\it manufakturing}. Penjadwalan ({\it scheduling}) sendiri didefinisikan sebagai suatu proses pengalokasian sumber daya atau mesin-mesin yang ada untuk melaksanakan tugas-tugas yang ada dalam suatu waktu tertentu (Baker, 1974). Sedangkan yang dimaksud dengan proses produksi adalah serangkaian langkah-langkah yang digunakan untuk mentransformasikan {\it Input} menjadi {\it Output}.
+
+Proses penjadwalan {\it Flow Shop} adalah salah satu metode penjadwalan produksi di mana urutan mesin yang digunakan untuk setiap proses dalam seluruh pekerjaan harus sama. Dalam penelitian - penelitian penjadwalan sebelumnya hanya difokuskan pada satu kriteria saja ({\it single}) namun pada penelitian kali ini akan menggunakan lebih dari satu kriteria ({\it multiple}). Banyak algoritma yang dapat digunakan untuk menentukan urutan  pengerjaan pekerjaan dalam proses penjadwalan produksi {\it Flow Shop}. Salah satu algoritma yang dapat digunakan dalam proses penjadwalan produksi {\it Multi Objective Flow Shop} adalah algoritma {\it Ant Colony Optimization}. Algoritma {\it Ant Colony Optimization} adalah algoritma yang mengadopsi perilaku koloni semut yang dikenal sebagai sistem semut. Algoritma ini menyelesaikan permasalahan berdasarkan tingkah laku semut dalam sebuah koloni yang sedang mencari sumber makanan.
+
+Penelitian ini dibuat untuk mempelajari, mengaplikasikan, serta mengukur kinerja Algoritma {\it Ant Colony Optimization} pada proses penjadwalan {\it Multi Objective Flow Shop Scheduling} (MOFSP). Pada skripsi ini juga akan dibuat perangkat lunak yang dapat menerima n job yang masing-masing terdiri atas m buah operasi dan m buah mesin. Setiap operasi hanya ditangani oleh sebuah mesin dan setiap mesin hanya bisa menangani satu operasi. Urutan operasi dari setiap job adalah sama.
+
+\section{Tujuan}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Menjelaskan penjadwalan {\it Multi Objective Flowshop Scheduling} (MOFSP).
+	\item Menjelaskan algoritma {\it Ant Colony Optimization} (ACO) .
+	\item Menampilkan  cara kerja dan implementasi algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP .
+	\item Mengetahui kinerja algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP dengan bantuan {\it benchmark} tertentu.
+\end{enumerate}
+
+\section{Rumusan Masalah}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Apa itu penjadwalan {\it Multi Objective Flowshop Scheduling} (MOFSP) ?
+	\item Apa itu algoritma {\it Ant Colony Optimization} (ACO) ?
+	\item Bagaimana cara kerja dan implementasi algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP ?
+	\item Bagaimana kinerja algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP ?
+
+\end{enumerate}
+
+\section{Detail Perkembangan Pengerjaan Skripsi}
+Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan terkahir :
+	\begin{enumerate}
+		\item \textbf{Melakukan studi literatur : penjadwalan proses produksi secara umum, MOFSP, ACO, dan aplikasi ACO untuk masalah penjadwalan.}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil :}
+		\begin{itemize}
+		\item {\bf Definisi penjadwalan secara umum.}\\
+		Secara umum penjadwalan menurut Baker (1974) didefinisikan sebagai proses pengalokasian sumber-sumber dalam    jangka waktu tertentu untuk melakukan sekumpulan pekerjaan. Definisi ini mengandung dua arti yang berbeda, yaitu :
+		\begin{enumerate}
+		\item Penjadwalan merupakan fungsi pengambilan keputusan, yaitu menentukan jadwal. 
+		\item Penjadwalan merupakan suatu teori, yaitu sekumpulan prinsip-prinsip dasar, model-model, teknik-teknik, dan kesimpulan-kesimpulan logis dalam proses pengambilan keputusan yang memberikan dalam fungsi penjadwalan (nilai konseptual).
+		\end{enumerate}
+		Menurut Conway (1967) Penjadwalan adalah proses pengurutan pembuatan produk secara menyeluruh pada beberapa mesin. Menurut Morton dan Pentico penjadwalan adalah proses pengorganisasian, pemilihan dan pemberian waktu dalam penggunaan sumber dayanya untuk melaksanakan aktivitas yang diperlukan dalam menghasilkan output yang diinginkan dengan memenuhi waktu yang diinginkan pula.
+		Persoalan penjadwalan timbul apabila jumlah mesin dan peralatan yang dimiliki terbatas sedangkan terdapat beberapa pekerjaan yang dapat dikerjakan secara bersama. Untuk mendapat hasil yang optimal dengan keterbatasan sumber daya yang dimiliki, maka diperlukan adanya penjadwalan sumber-sumber tersebut secara efisien.
+		Tujuan penjadwalan secara umum Baker (1974) adalah :
+		\begin{enumerate}
+		\item Meningkatkan produktivitas mesin, yaitu dengan mengurangi waktu menganggur mesin.
+		\item Mengurangi terhadap persediaan barang setengah jadi, dengan mengurangi rata-rata pekerjaan yang menunggu dalam antrian karena mesin sibuk oleh pekerjaan lain.
+		\item Mengurangi keterlambatan (tardiness). Dalam banyak hal, beberapa atau semua pekerjaan mempunyai batas waktu penyelesaian (duedate). Apabila suatu pekerjaan melewati batas waktu tersebut, maka akan dikenai pinalti. Keterlambatan dapat diperkecil dengan mengurangi maksimal tardiness atau mengurangi pekerjaan yang terlambat (number of  tardy job).
+		\end{enumerate}
+		Terdapat target utama yang ingin dicapai melalui penjadwalan flow shop ini yaitu jumlah output yang dihasilkan (throughput) berupa makespan. Penjadwalan flow shop didefinisikan sebagai penjadwalan dimana setiap job mempunyai pola aliran atau rute proses yang tetap pada seluruh mesin.
+		\end{itemize}
+		
+		\begin{itemize}
+		\item{\bf Perbedaan \it{Flow Shop} dengan \it{Job Shop}.}\\
+		Menurut Baker (1974) model penjadwalan dapat dibedakan menjadi 4 jenis keadaan, yaitu :
+		\begin{enumerate}
+		\item Mesin yang digunakan, dapat berupa proses dengan mesin tunggal atau proses dengan mesin majemuk.
+		\item Pola aliran proses, dapat berupa aliran identik atau sembarang.
+		\item Pola kedatangan pekerjaan, Statis atau Dinamis.
+		\item Sifat informasi yang diterima, dapat berupa Deterministik atau Stokastik.
+		\end{enumerate}
+		Pada jenis keadaan pertama, jumlah mesin dapat dibedakan atas mesin tunggal dan mesin majemuk. Model mesin tunggal merupakan model dasar dan biasanya dapat diterapkan dalam kasus mesin majemuk.
+Pada model kedua, pola aliran dapat dibedakan atas Flow Shop dan Job Shop. Pada Flow Shop dijumpai pola aliran pemrosesan dari suatu mesin ke mesin yang lain dalam urutan (routing) tertentu. Semua pekerjaan yang mengalir pada saat produksi yang sama tanpa boleh melewatinya disebut dengan pure Flow Shop. Tetapi jika pekerjaan yang datang kedalam Flow Shop tidak harus dikerjakan pada semua mesin, jenis Flow Shop ini disebut dengan General Flow Shop. Contoh pola aliran Pure Flow Shop dan contoh pola aliran Gereral Flow Shop ditunjukkan pada Gambar 
+		\end{itemize}		
+		
+		\begin{itemize}
+		\item{\bf Beberapa Istilah dalam Penjadwalan Flow Shop}
+		
+		\end{itemize}	
+		
+		\begin{itemize}
+		\item{\bf Aturan Prioritas Penjadwalan (Priority Dispatching Rules)}
+		
+		\end{itemize}			
+		
+		\begin{itemize}
+		\item{\bf Teknik - teknik dalam penjadwalan {\it flow shop}}
+		\end{itemize}	
+		
+		\begin{itemize}
+		\item {\bf Algoritma Ant Colony Optimization pada penjadwalan flow shop}
+		
+		\end{itemize}
+		
+		
+		
+				
+				
+		
+		
+		
+		
+		\item \textbf{Melakukan analisa aplikasi ACO pada masalah MOFSFP.}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil :}
+
+		\item \textbf{Mengembangkan perangkat lunak (analisis, desain, implementasi, dan pengujian).}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil :}
+
+		\item \textbf{Melakukan eksperimen dengan sebuah {\it benchmark}.}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil :}
+
+		\item \textbf{Menulis dokumen skripsi.}\\
+		{\bf Status :} Ada sejak rencana kerja skripsi.\\
+		{\bf Hasil :} Berikut ini adalah bagian dari dokumen skripsi yang telah ditulis : 
+		\begin{itemize}
+		\item Bab 1
+		\item Bab 2
+		\item Sebagian Bab 3
+		
+		\end{itemize}
+
+	
+		
+
+	\end{enumerate}
+
+\section{Pencapaian Rencana Kerja}
+Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah sebagai berikut:
+\begin{enumerate}
+\item Melakukan studi literatur : penjadwalan proses produksi secara umum, MOFSP, ACO, dan aplikasi ACO untuk masalah penjadwalan.
+\item Melakukan analisa aplikasi ACO pada masalah MOFSFP.
+\item Mempelajari {\it benchmark taliard}.
+\item Menulis sebagian dokumen skripsi.
+
+
+\end{enumerate}
+
+
+
+
+
+\vspace{1cm}
+\centering Bandung, \tanggal\\
+\vspace{2cm} \nama \\ 
+\vspace{1cm}
+
+Menyetujui, \\
+\ifdefstring{\jumpemb}{2}{
+\vspace{1.5cm}
+\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
+\vspace{2cm} Nama: \pembA \\ Pembimbing Utama
+\end{minipage} \hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \pemB \\ Pembimbing Pendamping
+\end{minipage}
+\vspace{0.5cm}
+}{
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \pembA \\ Pembimbing Tunggal
+}
+\end{document}
+

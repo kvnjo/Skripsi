@@ -1,0 +1,131 @@
+%versi 2 (8-10-2016)
+\chapter{Landasan Teori}
+\label{chap:teori}
+
+\section{Teori Graf}
+\label{sec:teori graf} 
+
+Graf adalah sebuah struktur yang dapat
+digunakan untuk merepresentasikan hubungan yang
+terjadi antara suatu objek diskrit yang satu dengan
+objek diskrit yang lain. Tujuan graf adalah untuk visualisasi objek agar mudah dimengerti.
+
+
+\subsection{Definisi Graf}
+
+Graf G (V, E), adalah koleksi atau pasangan dua himpunan
+\begin{itemize}
+\item Himpunan V yang elemennya disebut simpul atau titik, atau vertex, atau point,
+atau node.
+\item Himpunan E yang merupakan pasangan tak terurut dari simpul, disebut ruas
+atau rusuk, atau sisi, atau edge, atau line.
+\end{itemize}
+ 
+ 
+Penulisan untuk graf G dapat disingkat dengan notasi \textbf{G = (V,E)}
+
+\subsection{Jenis Graf}
+
+Berdasarkan ada tidaknya sisi ganda
+pada suatu graf, maka graf digolongkan menjadi
+dua jenis, yaitu :
+\begin{itemize}
+\item Graf Sederhana ( Simple Graph )\\
+Graf yang tidak mengandung sisi-ganda dinamakan graf
+sederhana. 
+
+\item Graf tak-sederhana ( Unsimple Graph )\\
+Graf yang mengandung sisi ganda dinamakan graf tak sederhana
+(unsimple graph).
+
+\end{itemize}
+
+Berdasarkan jumlah simpul pada suatu graf, maka secara umum graf dapat
+digolongkan menjadi dua jenis:
+\begin{itemize}
+\item Graf berhingga (limited graf)\\
+Graf berhingga adalah graf yang jumlah simpulnya, n, berhingga.
+
+
+\item Graf tak-berhingga (unlimited graf)\\
+Graf yang jumlah simpulnya, n, tidak berhingga banyaknya disebut graf takberhingga.
+
+\end{itemize}
+
+
+Berdasarkan orientasi arah pada sisi, maka secara
+umum graf dapat dibedakan menjadi 2 jenis, yaitu :
+\begin{itemize}
+\item Graf tak-berarah ( Undirected Graph )\\
+Graf yang sisinya tidak mempunyai
+orientasi arah disebut graf tak-berarah.
+
+\item Graf berarah ( Directed Graph )\\
+Graf yang setiap sisinya diberikan
+orientasi arah disebut sebagai graf berarah.
+\end{itemize}
+
+
+\subsection{Terminologi Graf}
+\begin{itemize}
+\item Derajat (\textit Degree)\\
+Derajat suatu simpul d(v) adalah banyaknya ruas yang menghubungkan suatu
+simpul.
+Sedangkan Derajat Graf G adalah jumlah derajat semua simpul Graf G. 
+
+
+\item Ketetanggaan (\textit Adjacent)\\
+Dua buah simpul dikatakan bertetangga bila keduanya terhubung langsung.\
+
+
+
+\item Graf Kosong (null graf atau empty graf)\\
+Graf yang himpunan sisinya merupakan himpunan kosong. 
+
+\end{itemize}
+
+
+
+\subsection{Keterhubungan Graf}
+
+Misalkan G adalah suatu graf, titik v dan w dalam graf G terhubung bila dan hanya bila ada walk dari v ke w.
+Graf G dikatakan terhubung jika 2 titik didalam G saling terhubung dan dikatakan tidak terhubung jika 2 titik didalam G tidak saling terhubung.
+
+Dalam keterhubungan sebuah graf, dikenal istilah seperti berikut:
+\begin{itemize}
+\item Walk
+
+
+\item Lintasan (Trail)\\
+Lintasan adalah Walk dengan semua ruas dalam barisan adalah berbeda.
+
+
+\item Jalur (Path)\\
+Jalur adalah Walk yang semua simpul dalam barisan adalah berbeda.
+
+
+\item Sirkuit (Cycle)\\
+Lintasan yang berawal dan berakhir pada simpul yang sama disebut sirkuit atau
+siklus. Panjang sirkuit adalah jumlah ruas dalam sirkuit tersebut.
+\end{itemize}
+
+
+
+
+
+\section{Cut Vertex}
+\label{sec:cut vertex}
+
+Sebuah simpul pada graf terhubung yang tidak berarah dinamakan cut vertex jika simpul tersebut dihilangkan atau dilepas maka akan menghasilkan graf yang tidak terhubung. Simpul tersebut akan membagi graf semula menjadi dua bagian atau lebih secara seimbang.
+Pada graf yang telah terputus, cut vertex akan menghasilkan sub-graf dari graf semula.
+
+\subsection{Mencari Cut Vertex}
+
+
+
+
+\section{GraphX pada Spark}
+\label{sec:template}
+ 
+
+

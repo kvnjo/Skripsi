@@ -1,0 +1,162 @@
+AIF401/AIF402 Rencana Kerja Skripsi Sem. Ganjil 2018/2019 
+
+Ant 
+Colony 
+Optimization 
+(ACO) 
+untuk 
+Permasalahan 
+Multi 
+Objective 
+Flowshop 
+Scheduling 
+(MOFSP) 
+
+
+Kevin Jonathan2014730020 
+
+1 
+Deskripsi 
+
+
+Penjadwalan produksi merupakan aktivitasyang tidak terpisahkan dalam suatuperusahaan manufakturing. Penjadwalan(scheduling)sendiri didenisikan sebagai suatu proses pengalokasian sumber daya atau mesinmesin yang ada untuk melaksanakan tugas-tugas yang ada dalam suatu waktu tertentu (Baker, 1974). Sedangkan yang dimaksud denga
+n proses produksi adalah serangkaian langkah-langkah yang digunakan untuk mengtransformasi Input 
+menjadi Output. 
+
+Prosespenjadwalan Flow 
+Shop 
+adalah salah satu metodepenjadwalan produksi di mana urutan mesinyang digunakan untuk setiap proses dalam seluruh pekerjaan harus sama. Dalam penelitian -penelitian penjadwalan sebelumnya hanya difokuskan pada satu kriteria saja(single) namun pada penelitian kali ini akan menggunakan lebih dari 
+satu kriteria(multiple). Banyak algoritmayang dapat digunakan untuk menentukan urutanpengerjaanpekerjaan dalam prosespenjadwalan produksi Flow 
+Shop. Salah satu algoritmayang dapatdigunakan dalam prosespenjadwalan produksi Mult
+i 
+Objective 
+Flow 
+Shop 
+adalah algoritma Ant 
+Colony 
+Optimization. Algoritma Ant 
+Colony 
+Optimization 
+adalah algoritmayang mengadopsiperilakukolonisemut yang dikenal sebagai sistem semut. Algoritma ini menyelesaikan permasalahan berdasarkan tingkah laku semut dalam sebuah koloni yang sedang mencari sumber makanan. 
+
+Penelitian ini dibuat untuk mempelajari, mengaplikasikan, serta mengukurkinerja Algoritma Ant 
+Colony 
+Optimization 
+pada proses penjadwalan Multi 
+Objective 
+Flow 
+Shop 
+Scheduling 
+(MOFSP). Pada skripsi ini juga akan dibuat perangkat lunak yang dapat menerima n job yang masing-masing terdiri atas m buah operasi dan m buah mesin. Setiap operasi hanya ditangani oleh sebuah mesin dan setiap mesin hanya bisa menangani satu operasi. Urutan operasi dari setiap job adalah sama. 
+
+2 
+Rumusan 
+Masalah 
+
+
+(a) Apa itu penjadwalan Multi 
+Objective 
+Flowshop 
+Scheduling 
+(MOFSP) ? 
+(b) Apa itu algoritma Ant 
+Colony 
+Optimization 
+(ACO) ? 
+(c) Bagaimana cara kerja dan implementasi algoritma Ant 
+Colony 
+Optimization 
+(ACO) untuk menyelesaikan permasalahan MOFSP ? 
+(d) Bagaimana kinerja algoritma Ant 
+Colony 
+Optimization 
+(ACO) untuk menyelesaikan permasalahan MOFSP ? 
+3 
+Tujuan 
+
+
+(a) Menjelaskan penjadwalan Multi 
+Objective 
+Flowshop 
+Scheduling 
+(MOFSP). 
+(b) Menjelaskan algoritma Ant 
+Colony 
+Optimization 
+(ACO) . 
+
+(c) Menampilkan cara kerja dan implementasi algoritma Ant 
+Colony 
+Optimization 
+(ACO) untuk menyelesaikan permasalahan MOFSP . 
+(d) Mengetahui kinerja algoritma Ant 
+Colony 
+Optimization 
+(ACO) untuk menyelesaikan permasalahan MOFSP dengan bantuan benchmark 
+tertentu. 
+4 
+Deskripsi 
+Perangkat 
+Lunak 
+
+
+Perangkat lunak akhiryang akan dibuat memiliki tur minimal sebagaiberikut: 
+
+• 
+Perangkat lunak dapat menerima kasus MOFSP untuk dicari solusinya. 
+• 
+Perangkat lunak dapat menjalankan algoritma Ant 
+Colony 
+Optimization. 
+• 
+Perangkat lunak dapat menghasilkan proses optimasi menggunakan algoritma Ant 
+Colony 
+Optimization. 
+• 
+Perangkat lunak dapat menghasilakan urutanpengerjaan atau solusi terbaik untukpermasalahan MOFSP. 
+5 
+Detail 
+Pengerjaan 
+Skripsi 
+
+
+Bagian-bagianpekerjaan skripsi ini adalah sebagaiberikut: 
+
+1. Melakukan studi literatur :penjadwalan proses produksi secara umum, MOFSP,ACO, dan aplikasi ACOuntuk masalahpenjadwalan. 
+2. Melakukan analisa aplikasi ACO pada masalah MOFSFP. 
+3. Mengembangkanperangkat lunak (analisis, desain, implementasi, danpengujian). 
+4. Melakukan eksperimendengan sebuah benchmark. 
+5. Menulis dokumen skripsi. 
+6 
+Rencana 
+Kerja 
+
+
+Rincian capaianyang direncanakan di Skripsi1 adalah sebagaiberikut: 
+
+1. Melakukan studi literatur penjadwalan proses produksi secara umum. 
+2. Melakukan studi literatur penjadwalan Multi 
+Objective 
+Flowshop 
+Scheduling 
+(MOFSP). 
+3. Melakukan studi literatur ACO serta pengaplikasiannya pada permasalahan MOFSP. 
+4. Menulis sebagian dokumen skripsi, dari bab 1 sampai dengan sebagian bab 2. 
+Sedangkanyang akan diselesaikan di Skripsi2 adalah sebagaiberikut: 
+
+1. Melakukan analisis,perancangan, dan implementasiperangkatlunak. 
+2. Melakukan eksperimendengan bantuan benchmark 
+tertentu. 
+3. Menyelesaikan penulisan dokumen skripsi. 
+
+AIF401/AIF402 Rencana Kerja Skripsi Sem. Ganjil 2018/2019 
+
+Bandung, 06/09/2018 
+
+Kevin Jonathan 
+
+Menyetujui, 
+
+Nama: Pembimbing Tunggal 
+
+
