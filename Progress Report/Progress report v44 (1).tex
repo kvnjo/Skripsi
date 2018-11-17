@@ -3,6 +3,7 @@
 \usepackage[bahasa]{babel}
 \usepackage{graphicx}
 \usepackage{graphics}
+\usepackage{hyperref}
 \usepackage{grffile}
 \usepackage{enumitem}
 \usepackage{float}
@@ -212,29 +213,35 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan 
 	
 	
 		\begin{itemize}
-		\item {\bf MOFSP}
+			\item{\bf Beberapa Istilah dalam Penjadwalan Flow Shop}\\
+			Penjadwalan Flow shop dapat dijelaskan sebagai berikut. Jika terdapat n job $\{j1, j2, \dots\, jn\}$, maka harus diproses pada m mesin $\{m1, m2, \dots, mm\}$. Waktu yang diperlukan untuk memproses job i pada mesin j adalah tij. Jadi permasalahan penjadwalan adalah menentukan urutan job yang memberikan solusi terbaik berdasarkan kriteria tertentu. Beberapa istilah yang digunakan dalam masalah penjadwalan yaitu :
+			\begin{enumerate}
+				\item Waktu proses (processing time = tj) : yaitu rentang waktu yang dibutuhkan untuk menyelesaikan suatu operasi pada job j.
+				\item Ready Time (rj), yaitu saat mulai suatu job j dapat dikerjakan.
+				\item DueDate (dj), yaitu batas waktu akhir suatu job harus sudah terselesaikan. Bila melewati batas ini, suatu job dikatakan terlambat (tardy).
+				\item Waktu penyelesaian (completion time = Cj) : saat job j telah selesai dikerjakan.
+				\item Waktu tinggal (flow time = Fj) : lamanya job j berada dilantai pabrik (shop). Flow time dihitung sejak job siap dijadwalkan sampai job selesai dikerjakan.
+				\item Lateness (Lj), yaitu merupakan penyimpangan waktu penyelesaian saat job terhadap duedate job yang bersangkutan. Lateness dihitung dengan persamaan Lj = Cj - dj.
+				Lj < 0, saat penyelesaian memenuhi batas akhir (earliness).
+				Lj > 0, saat penyelesaian melewati batas akhir (tardiness).
+				\item Slack (SLj), yaitu waktu yang tersedia bagi suatu pekerjaan.
+				SLj = dj - tj.
+				\item Tardiness (Tj), yaitu merupakan keterlambatan penyelesaian suatu job  terhadap duedate job tersebut.
+				Tj = max {0,Lj}.
+				\item Makespan (Ms), yaitu waktu dimana semua pekerjaan terakhir selesai (MaxLj).
+			\end{enumerate}
+		\end{itemize}
+	
 		
-		\end{itemize}	
-		
+	
+	
 		\begin{itemize}
-		\item{\bf Beberapa Istilah dalam Penjadwalan Flow Shop}\\
-		Penjadwalan Flow shop dapat dijelaskan sebagai berikut. Jika terdapat n job $\{j1, j2, \dots\, jn\}$, maka harus diproses pada m mesin $\{m1, m2, \dots, mm\}$. Waktu yang diperlukan untuk memproses job i pada mesin j adalah tij. Jadi permasalahan penjadwalan adalah menentukan urutan job yang memberikan solusi terbaik berdasarkan kriteria tertentu. Beberapa istilah yang digunakan dalam masalah penjadwalan yaitu :
-		\begin{enumerate}
-		\item Waktu proses (processing time = tj) : yaitu rentang waktu yang dibutuhkan untuk menyelesaikan suatu operasi pada job j.
-		\item Ready Time (rj), yaitu saat mulai suatu job j dapat dikerjakan.
-		\item DueDate (dj), yaitu batas waktu akhir suatu job harus sudah terselesaikan. Bila melewati batas ini, suatu job dikatakan terlambat (tardy).
-		\item Waktu penyelesaian (completion time = Cj) : saat job j telah selesai dikerjakan.
-		\item Waktu tinggal (flow time = Fj) : lamanya job j berada dilantai pabrik (shop). Flow time dihitung sejak job siap dijadwalkan sampai job selesai dikerjakan.
-		\item Lateness (Lj), yaitu merupakan penyimpangan waktu penyelesaian saat job terhadap duedate job yang bersangkutan. Lateness dihitung dengan persamaan Lj = Cj - dj.
-		Lj < 0, saat penyelesaian memenuhi batas akhir (earliness).
-		Lj > 0, saat penyelesaian melewati batas akhir (tardiness).
-		\item Slack (SLj), yaitu waktu yang tersedia bagi suatu pekerjaan.
-		SLj = dj - tj.
-		\item Tardiness (Tj), yaitu merupakan keterlambatan penyelesaian suatu job  terhadap duedate job tersebut.
-		Tj = max {0,Lj}.
-		\item Makespan (Ms), yaitu waktu dimana semua pekerjaan terakhir selesai (MaxLj).
-		\end{enumerate}
+		\item {\bf Multi Objective Flow Shop Scheduling}\\
+		Pada dasarnya MOFSP adalah bagian dari {\it flow shop } itu sendiri. MOFSP menjelaskan kriteria optimasi yang akan diselesaikan menggunakan algoritma {\it Ant Colony Optimization}. Kriteria tersebut bersifat jamak {\it Multi Objective}. Kriteria tersebut misalnya saja minimasi waktu proses keseluruhan, minimasi waktu tunggu job, minimasi waktu nganggur mesin, dan sebagainya. Pemilihan kriteria optimasi yang akan diselesaikan pada skripsi ini akan ditentukan lebih lanjut pada saat pengerjaan skripsi 2.
+		
 		\end{itemize}	
+		
+		
 		
 		\begin{itemize}
 		\item{\bf Ant Colony Optimization}\\
@@ -259,20 +266,135 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan 
 		
 		\begin{itemize}
 		\item {\bf Algoritma Ant Colony Optimization pada penjadwalan flow shop}\\
-		Sesuai dengan contoh eksperimen pada gambar 5 terdapat pola saat sekelompok semut berjalan (contoh, dari sumber makanan A ke sarang E, dan sebaliknya). Secara tiba-tiba rintangan muncul dan pola menjadi terpotong. Pada posisi B, semut berjalan dari A ke E (atau pada posisi D yang bergerak dengan arah yang berlawanan) harus memutuskan apakah harus bergerak ke kiri atau ke kanan.
-		Pilihan ini dipengaruhi oleh intensitas jejak pheromone yang ditinggalkan oleh semut sebelumnya. Tingkat pheromone yang lebih tinggi pada pola sebelah kanan memberikan semut rangsangan yang lebih kuat dan kemungkinan yang lebih tinggi untuk berbelok ke kanan. Semut pertama mencapai titik B atau D mempunyai kemungkinan yang sama untuk belok ke kiri atau ke kanan (karena tidak terdapat pheromone pada dua pola alternatif tersebut).
+		\begin{enumerate}
+			\item Karakteristik Semut \\
+				Sesuai dengan contoh eksperimen pada gambar 5 terdapat pola saat sekelompok semut berjalan (contoh, dari sumber makanan A ke sarang E, dan sebaliknya). Secara tiba-tiba rintangan muncul dan pola menjadi terpotong. Pada posisi B, semut berjalan dari A ke E (atau pada posisi D yang bergerak dengan arah yang berlawanan) harus memutuskan apakah harus bergerak ke kiri atau ke kanan.
+			Pilihan ini dipengaruhi oleh intensitas jejak pheromone yang ditinggalkan oleh semut sebelumnya. Tingkat pheromone yang lebih tinggi pada pola sebelah kanan memberikan semut rangsangan yang lebih kuat dan kemungkinan yang lebih tinggi untuk berbelok ke kanan. Semut pertama mencapai titik B atau D mempunyai kemungkinan yang sama untuk belok ke kiri atau ke kanan (karena tidak terdapat pheromone pada dua pola alternatif tersebut).
+			
+			Karena pola BCD lebih pendek dibandingkan dengan pola BHD, semut pertama yang mengikuti ini akan mencapai D sebelum semut yang mengikuti pola BHD. Hasilnya adalah semut yang bergerak dari E ke D akan mendapatkan jejak yang lebih jelas pada pola DCB, karena setengah dari semut tersebut yang memilih untuk mendekati rintangan melalui DCBA dan dengan segera akan sampai melalui BCD, mereka akan melalui pola memilih pola DCB dibandingkan pola DHB. Sebagai Konsekuensi, jumlah semut yang mengikuti pola BCD per unit waktu akan lebih banyak dibandingkan dengan jumlah semut yang mengikuti pola BHD.
+			
+			Hal ini menyebabkan jumlah pheromone pada pola yang lebih pendek akan muncul lebih cepat dibandingkan dengan pola yang lebih jauh, dan oleh karena itu kemungkinan semut yang memilih pola yang diikuti mempunyai bias terhadap pola yang lebih pendek. Hasil akhir yang akan dipilih secara cepat akan ditunjukkan pada pola yang lebih pendek.
+			
+			Algoritma yang akan dibahas pada bagian selanjutnya adalah model yang berasal dari kumpulan kehidupan nyata semut. Selanjutnya hal ini disebut dengan Sistem Semut dan algoritma yang akan dibahas dikenal dengan algoritma semut. Karakteristik semut asli untuk ketika sedang bergerak dari satu titik ke titik tujuan dapat dilihat pada kedua ilustrasi gambar berikut ini.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.90]{gambar5}
+				\caption[Contoh Karakteristik Semut] {Contoh karakteristik semut 1}
+				\label{fig:karakteristiksemut1}
+			\end{figure}
 		
-		Karena pola BCD lebih pendek dibandingkan dengan pola BHD, semut pertama yang mengikuti ini akan mencapai D sebelum semut yang mengikuti pola BHD. Hasilnya adalah semut yang bergerak dari E ke D akan mendapatkan jejak yang lebih jelas pada pola DCB, karena setengah dari semut tersebut yang memilih untuk mendekati rintangan melalui DCBA dan dengan segera akan sampai melalui BCD, mereka akan melalui pola memilih pola DCB dibandingkan pola DHB. Sebagai Konsekuensi, jumlah semut yang mengikuti pola BCD per unit waktu akan lebih banyak dibandingkan dengan jumlah semut yang mengikuti pola BHD.
+			Penjelasan karakteristik semut (1) :
+			\begin{enumerate}
+				\item Semut-semut mengikuti jalur dari titik A ke titik E.
+				\item Sebagai rintangan maka diletakkan hambatan pada jalur lintasan ; semut-semut memilih untuk bergerak memutari salah satu sisi dengan probabilitas yang sama.
+				\item Di jalur yang lebih pendek ditinggalkan lebih banyak pheromone.\\
+				
+			\end{enumerate}
+			
 		
-		Hal ini menyebabkan jumlah pheromone pada pola yang lebih pendek akan muncul lebih cepat dibandingkan dengan pola yang lebih jauh, dan oleh karena itu kemungkinan semut yang memilih pola yang diikuti mempunyai bias terhadap pola yang lebih pendek. Hasil akhir yang akan dipilih secara cepat akan ditunjukkan pada pola yang lebih pendek.
+			Oleh karena itu, bahwa metafora kumpulan semut dapat digunakan untuk menjelaskan model ini. Sesuai dengan gambar \ref{fig:karakteristiksemut2} yang merupakan interpretasi sistem semut pada situasi gambar \ref{fig:karakteristiksemut2}. Untuk menyempurnakan hal ini, misalkan jarak antara D dan H, diantara B dan H, dan diantara B dan D melalui C sama dengan 1, dan posisi C adalah setengah jalan antara D dan B. Sekarang hal ini dipertimbangkan sebagai interval yang berlainan pada waktu : t (0, 1, 2)  .
+			
+			Misalkan bahwa 30 semut yang baru datang ke B dari A, dan 30 semut ke D dari E pada tiap unit waktu, kecepatan gerak semut pada kecepatan 1 per unit waktu, dan saat bergerak semut akan meninggalkan jejak pheromone pada intensitas 1, dan membuat hal ini menjadi lebih mudah, penguapan secara sempurna dan berurutan terjadi pada pertengahan interval waktu (t+1, t+2).
+			
+			Pada saat t = 0 belum terdapat jejak, tetapi 30 semut berada di B dan 30 di D. Pilihan mereka tentangt jalan mana yang akan ditempuh adalah acak. Selanjutnya rata-rata 15 semut dari setiap bagian akan bergerak ke arah H dan 15 ke arah C.
+			Pada t = 1, 30 semut baru akan muncul ke B dari A akan menemukan jejak pada intensitas 15 dan pola mengarah ke H, yang ditinggalkan oleh 15 semut yang bergerak dari B, dan jejak pada intensitas 30 pada pola C, akan mencapai kumpulan jejak yang ditinggalkan oleh 15 semut yang bergerak dari B dan 15 semut yang mencapai B datang dari D melalui C. Kemungkinan dalam memilih pola selanjutnya bisa menjadi berat sebelah dan sejumlah semut diharapkan bergerak kearah C akan meningkat dua kali ke arah H : 20 versus 10. Hal yang sama berlaku untuk 30 semut pada D yang datang dari E.
+			Proses berlanjut sampai semua semut akan memilih pola yang paling pendek. 
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.85]{gambar6}
+				\caption[Contoh Karakteristik Semut] {Contoh karakteristik semut 2}
+				\label{fig:karakteristiksemut2}
+			\end{figure}
 		
-		Algoritma yang akan dibahas pada bagian selanjutnya adalah model yang berasal dari kumpulan kehidupan nyata semut. Selanjutnya hal ini disebut dengan Sistem Semut dan algoritma yang akan dibahas dikenal dengan algoritma semut. Karakteristik semut asli untuk ketika sedang bergerak dari satu titik ke titik tujuan dapat dilihat pada kedua ilustrasi gambar berikut ini.
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.80]{gambar5}
-			\caption[Contoh Karakteristik Semut] {Contoh Karakteristik semut}
-			\label{fig:karakteristiksemut}
-		\end{figure}
+			Penjelasan karakteristik semut (2) :
+			\begin{enumerate}
+			 \item Graf dengan jarak-jaraknya.
+			 \item Pada saat t = 0 tidak ada jejak dijalur-jalur graf ; oleh karena itu semut-semut akan memilih apakah akan belok kekiri atau kekanan dengan probabilitas yang sama.
+			 \item Pada saat t = 1 jejak lebih banyak pada jalur yang lebih pendek, karena itu jalur tersebut akan ditinggalkan lebih banyak pheromone.\\
+			 
+			\end{enumerate}
+		
+			Ide yang muncul adalah jika kita memberikan nilai pada semut yang harus memilih diantara beberapa pola, yang secara kuat dipilih berdasarkan semut yang sebelumnya (dengan tingkat jejak tertinggi) dipilih dengan probabilitas yang lebih tinggi. Selanjutnya tingkat jejak yang lebih tinggi sejalan dengan pola yang pendek.
+			Karakteristik semut tersebut digunakan oleh {\it Ant Colony Optimization }. Tetapi pada {\it Ant Colony Optmization} dimodifikasi dengan mengubah bahwa pada awalnya setiap jalur yang ada memiliki sejumlah pheromone awal, semut buatan akan memilih jalur-jalur yang ada dengan probabilitas yang tergantung pada jarak dan intensitas pheromone.\\
+			
+			\newpage
+			\item Cara kerja Algoritma 
+			
+			Gambar 7 berikut adalah flow chart dari algoritma ant colony.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.80]{gambar7}
+				\caption[Flowchart ACO] {Flowchart algoritma ant colony optimization}
+				\label{fig:flowchartACO}
+			\end{figure}
+			Berdasarkan Gambar 7, untuk menjalankan proses pelatihan dengan algoritma ant colony mempersiapkan
+			jalur-jalur yang ada perlu dilakukan. Jalur-jalur tersebut merupakan kemungkinan
+			solusi-solusi yang mungkin dipilih oleh semut. Kemungkinan dipilihnya suatu jalur akan ditentukan
+			berdasarkan nilai feromon, oleh karena itu perlu dibentuk pula tempat penyimpanan feromon untuk
+			setiap jalur yang mungkin dilalui.
+			Pada awalnya, algoritma ant colony akan membentuk sekumpulan semut, semut-semut tersebut
+			akan disebar secara acak pada jalur-jalur yang ada. Proses penyebaran semut tersebut akan memperhatikan
+			nilai feromon dari masing-masing jalur. Semakin besar nilai feromon dari suatu jalur,
+			maka semakin besar pula kemungkinan dipilihnya jalur tersebut untuk dilalui semut. Jalur-jalur
+			yang dipilih oleh semut akan disimpan dan dibandingkan dengan jalur-jalur yang telah dipilih oleh
+			semut-semut lainnya.
+			
+			Dari jalur-jalur yang telah dipilih akan dibentuk nilai feromonnya berdasarkan tingkat keoptimalan
+			dari jalur tersebut. Nilai feromon-feromon tersebut akan ditambahkan pada jalur-jalur
+			yang bersangkutan untuk memperbesar kemungkinan dipilihnya jalur tersebut sesuai dengan tingkat
+			keoptimalannya. Semakin optimal suatu jalur, semakin besar pula jumlah feromon yang akan
+			ditambahkan pada suatu jalur.
+			Tidak lupa pula, proses evaporasi feromon akan dilakukan. Proses evaporasi feromon ini akan
+			mengurangi jumlah feromon yang disimpan. Proses evaporasi ini bertujuan untuk mengurangi
+			jumlah feromon dari jalur-jalur yang dianggap kurang optimal. Proses-proses tersebut akan terus
+			dilakukan hingga suatu kondisi berhenti ditemui.
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.80]{gambar8}
+				\caption[Pseudocode ACO] {Pseudocode algoritma ant colony optimization}
+				\label{fig:pseudocodeACO}
+			\end{figure}
+		
+			Berdasarkan flow chart pada gambar 8, dibentuklah pseudocode di atas. Baris pertama
+			dari pseudocode tersebut merupakan proses pembentukan data feromon. Proses pembentukan data
+			feromon tersebut akan memperhatikan kasus yang ingin dicari hasil optimalnya. Nilai masingmasing
+			jalur dan cara mengartikan nilai feromon tersebut diatur berdasarkan kasus yang ingin
+			dicari hasil optimalnya. Jumlah feromon pada masing-masing jalur pada awalnya bernilai sama.
+			Setelah data feromon selesai dibuat, proses pelatihan dengan menggunakan algoritma ant colony
+			dimulai. Baris ketiga pada pseudocode menunjukkan kondisi berhenti untuk proses optimisasi dari
+			algoritma ant colony. 
+			
+			Seluruh potongan kode di dalam kondisi while tersebut merupakan satu fase
+			pelatihan dari algoritma ant colony. Fase pelatihan tersebut terdiri dari proses pembentukan jalur,
+			penentuan solusi optimal, dan perubahan nilai feromon (penambahan dan evaporasi feromon).
+			Fase pelatihan dari algoritma ant colony bertujuan untuk membentuk data feromon yang mampu
+			menghasilkan solusi yang paling optimal. Pada setiap fase pelatihan ini akan dibentuk sejumlah
+			semut yang bertugas untuk menyimpan solusi acak/solusi lokal yang telah dipilih pada suatu fase
+			pelatihan. Semut-semut ini akan dianggap memilih sebuah jalur/solusi secara acak berdasarkan
+			nilai yang disimpan pada data feromon. Jika solusi acak tersebut lebih baik dari solusi optimal
+			yang diketahui pada saat ini, maka solusi acak tersebut akan dianggap sebagai solusi optimal yang
+			baru.
+			
+			Pada saat pemilihan solusi secara acak, perlu dipastikan bahwa solusi tersebut merupakan solusi
+			yang valid dari suatu kasus. Pada saat pemilihan solusi kita juga dapat melakukan proses local
+			search. Proses ini bertugas untuk membandingkan solusi yang dibentuk dengan solusi yang mirip.
+			Jika solusi lain tersebut lebih baik, maka solusi yang dipilih akan diganti menjadi solusi yang mirip
+			tersebut. Proses ini bersifat opsional, karena tidak semua permasalahan dapat diaplikasikan dengan
+			proses ini.
+			
+			Setelah semut-semut telah selesai memilih solusi secara acak, proses perubahan nilai feromon
+			akan dilakukan. Proses perubahan tersebut mencakup proses penambahan dan evaporasi nilai
+			feromon. Proses penambahan nilai feromon akan memperhatikan tingkat keoptimalan dari solusi
+			yang dipilih suatu semut. Semakin optimal suatu solusi, semakin banyak pula nilai feromon yang
+			ditambahkan pada jalur/solusi tersebut. Setelah proses optimisasi selesai, solusi yang paling optimal
+			akan diberikan sebagai data keluaran.
+			
+		\end{enumerate}
+	
+		
+		
+		
 		
 		
 		\end{itemize}
@@ -297,7 +419,26 @@ Detail bagian pekerjaan skripsi sesuai dengan rencan kerja/laporan perkembangan 
 		dengan menggunakan data kasus standar. Data kasus standar tersebut akan dianggap sebagai
 		suatu kasus unik yang memerlukan algoritma khusus untuk proses optimisasinya. Data standar tersebut
 		akan digunakan sebagai pembanding dalam proses optimisasi. Dengan menggunakan data
-		standar, penilaian kualitas dari suatu algoritma optimisasi dapat dilakukan.
+		standar, penilaian kualitas dari suatu algoritma optimisasi dapat dilakukan. Dalam kasus penelitian ini, data kasus standar tersebut akan menggunakan data dari suatu benchmark yang bernama {\it Taillard Benchmark}. {\it Benchmark} tersebut dapat diakses lewat url berikut : \url{http://mistic.heig-vd.ch/taillard/problemes.dir/ordonnancement.dir/ordonnancement.html}.
+		
+		Berikut tampilan dari {\it Taillard Benchmark} :
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.70]{gambar9}
+			\caption[TaillardBenchmatk] {Tampilan {\it Taillard Benchmark}}
+			\label{fig:taillardbenchmark}
+		\end{figure}
+		
+		Terdapat berbagai macam data pengujian, diantaranya : {\it flow shop}, {\it job shop}, dan {\it open shop}. Misalnya kita ingin mendapatkan data kasus standar untuk mengerjakan 20 jobs pada 5 mesin pada penjadwalan {\it flow shop}. Maka tampilan data kasus standar tersebut sebagai berikut :
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.70]{gambar10}
+			\caption[TaillardBenchmatk] {Tampilan {\it Taillard Benchmark}}
+			\label{fig:taillardbenchmark}
+		\end{figure}
+		
 		\end{itemize}
 		
 
@@ -327,7 +468,7 @@ Langkah-langkah kerja yang berhasil diselesaikan dalam Skripsi 1 ini adalah seba
 
 
 
-\newpage
+
 \vspace{1cm}
 \centering Bandung, \tanggal\\
 \vspace{2cm} \nama \\ 
