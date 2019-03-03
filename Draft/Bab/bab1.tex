@@ -1,0 +1,120 @@
+%versi 2 (8-10-2016) 
+\chapter{Pendahuluan}
+\label{chap:intro}
+   
+\section{Latar Belakang}
+\label{sec:label}
+
+Penjadwalann produksi merupakan aktivitas yang tidak terpisahkan dalam suatu perusahaan {\it manufakturing}. Penjadwalan ({\it scheduling}) sendiri didefinisikan sebagai suatu proses pengalokasian sumber daya atau mesin-mesin yang ada untuk melaksanakan tugas-tugas yang ada dalam suatu waktu tertentu (Baker, 1974). Sedangkan yang dimaksud dengan proses produksi adalah serangkaian langkah-langkah yang digunakan untuk mentransformasikan {\it Input} menjadi {\it Output}.
+
+Proses penjadwalan {\it Flow Shop} adalah salah satu metode penjadwalan produksi di mana urutan mesin yang digunakan untuk setiap proses dalam seluruh pekerjaan harus sama. Dalam penelitian - penelitian penjadwalan sebelumnya hanya difokuskan pada satu kriteria saja ({\it single}) namun pada penelitian kali ini akan menggunakan lebih dari satu kriteria ({\it multiple}). Banyak algoritma yang dapat digunakan untuk menentukan urutan  pengerjaan pekerjaan dalam proses penjadwalan produksi {\it Flow Shop}. Salah satu algoritma yang dapat digunakan dalam proses penjadwalan produksi {\it Multi Objective Flow Shop} adalah algoritma {\it Ant Colony Optimization}. Algoritma {\it Ant Colony Optimization} adalah algoritma yang mengadopsi perilaku koloni semut yang dikenal sebagai sistem semut. Algoritma ini menyelesaikan permasalahan berdasarkan tingkah laku semut dalam sebuah koloni yang sedang mencari sumber makanan.
+
+Penelitian ini dibuat untuk mempelajari, mengaplikasikan, serta mengukur kinerja Algoritma {\it Ant Colony Optimization} pada proses penjadwalan {\it Multi Objective Flow Shop Scheduling} (MOFSP). Pada skripsi ini juga akan dibuat perangkat lunak yang dapat menerima n job yang masing-masing terdiri atas m buah operasi dan m buah mesin. Setiap operasi hanya ditangani oleh sebuah mesin dan setiap mesin hanya bisa menangani satu operasi. Urutan operasi dari setiap job adalah sama.
+
+
+\section{Rumusan Masalah}
+\label{sec:rumusan}
+\begin{enumerate}
+	\item Apa itu penjadwalan {\it Multi Objective Flowshop Scheduling} (MOFSP) ?
+	\item Apa itu algoritma {\it Ant Colony Optimization} (ACO) ?
+	\item Bagaimana cara kerja dan implementasi algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP ?
+	\item Bagaimana kinerja algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP ?
+	
+\end{enumerate}
+
+
+\section{Tujuan}
+\label{sec:tujuan}
+\begin{enumerate}
+	\item Menjelaskan penjadwalan {\it Multi Objective Flowshop Scheduling} (MOFSP).
+	\item Menjelaskan algoritma {\it Ant Colony Optimization} (ACO) .
+	\item Menampilkan  cara kerja dan implementasi algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP .
+	\item Mengetahui kinerja algoritma {\it Ant Colony Optimization} (ACO) dalam menyelesaikan permasalahan MOFSP dengan bantuan {\it benchmark} tertentu.
+\end{enumerate}
+
+
+
+\section{Batasan Masalah}
+\label{sec:batasan}
+
+Batasan dan asumsi untuk penelitian ini adalah :
+
+\begin{enumerate}
+	\item Waktu proses dari setiap pekerjaan telah diketahui dan bernilai tetap
+	\item Semua penyelesaian proses dari pekerjaan mengikuti alur proses yang sama dan sistematis
+	\item Pengerjaan proses dari pekerjaan-pekerjaan yang ada tidak dapat saling mendahului
+	\item Eksperimen dilakukan dengan sampel data kasus milik {\it Tailard Benchmark} flow shop dengan jumlah mesin yang beragam.
+	\item Pengukuran tingkat performansi dari algoritma menggunakan perbandingan nilai makespan dan nilai idle mesin dalam menjalankan suatu job.
+	
+\end{enumerate}
+
+\section{Metodologi}
+\label{sec:metlit}
+
+Metodologi penyelesaian masalah dalam penelitian ini adalah :
+\begin{enumerate}
+	\item Studi Literatur
+	
+	Mencari referensi dari sumber-sumber tertentu untuk memperdalam pemahaman mengenai
+	cara kerja proses penjadwalan flow shop dan cara kerja algoritma ant colony agar
+	kemudian dapat mengaplikasikan algoritma tersebut pada proses penjadwalan flow shop.
+	
+	\item Analisa Kasus
+	
+	Menentukan cara pengaplikasian algoritma ant colony untuk optimisasi penjadwalan flow shop. Menentukan data masukan dan data keluaran yang dibutuhkan oleh perangkat
+	lunak. Menentukan fungsi-fungsi apa saja yang dibutuhkan perangkat lunak.
+	
+	\item Pengembangan perangkat lunak
+	
+	Membentuk struktur kelas dari perangkat lunak. Mendesain interface yang sesuai untuk perangkat lunak. Membangun perangkat lunak untuk optimisasi penjadwalan flow shop dengan algoritma ant colony. Melakukan pengujian fungsional pada perangkat lunak.
+	
+	\item Eksperimen
+	
+	Melakukan proses optimisasi dengan menggunakan perangkat lunak pada beberapa sampel	kasus flow shop. Mencatat dan mengolah data hasil proses optimisasi untuk mengukur performa perangkat lunak. Mengukur tingkat keoptimalan dari proses optimisasi yang
+	dilakukan oleh perangkat lunak.
+	
+	\item Pengambilan kesimpulan
+	
+	Mengambil kesimpulan-kesimpulan yang bisa didapatkan dari hasil eksperimen. Melakukan
+	dokumentasi dari skripsi ini.
+	
+\end{enumerate}
+
+
+\section{Sistematika Pembahasan}
+\label{sec:sispem}
+
+
+Sistematika penulisan karya tulis ini adalah sebagai berikut :
+
+\begin{enumerate}
+	\item Bab 1 : Pendahuluan untuk mendefinisikan masalah yang akan dibahas, alasan pemilihan
+	topik dan usulan solusi terhadap masalah yang ada.
+	
+	\item Bab 2 : Dasar teori yang digunakan dalam penelitian ini. Pembahasan permasalahan 
+	flow shop. Pembahasan cara kerja dari algoritma ant colony. Pembahasan cara pengaplikasian
+	algoritma ant colony untuk optimisasi proses penjadwalan flow shop.
+	
+	\item Bab 3 : Analisis masalah yang akan dilakukan pada penelitian ini. Pembahasan cara penerapan
+	algoritma ant colony dan rancangan awal dari perangkat lunak.
+	
+	\item Bab 4 : Perancangan perangkat lunak. Detil informasi mengenai perangkat lunak yang telah
+	dibuat. Struktur kelas dan desain antarmuka grafis dari perangkat lunak yang telah dibuat.
+	
+	\item Bab 5 : Implementasi dan pengujian. Hasil implementasi algoritma ant colony pada perangkat
+	lunak. Penjelasan cara penggunaan perangkat lunak. Hasil pengujian dan eksperimen kasus
+	flow shop pada perangkat lunak
+	
+	\item Bab 6 : Kesimpulan dan saran. Hal-hal yang dapat disimpulkan dari penelitian ini. Saran
+	pengembangan yang dapat dilakukan pada penelitian selanjutnya.
+	
+	
+	
+	
+	
+	
+	
+\end{enumerate}
+
+
+
