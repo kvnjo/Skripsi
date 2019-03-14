@@ -31,8 +31,8 @@
 % Isilah dengan 0 atau 1 (e.g. \daftarIsiError{1}). 
 % Pemilihan 0 atau 1 silahkan disesuaikan dengan hasil PDF yang dihasilkan.
 %=============================================================================
-%\daftarIsiError{0}   
-\daftarIsiError{1}   
+\daftarIsiError{0}   
+%\daftarIsiError{1}   
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -47,7 +47,6 @@
 \usepackage{todo}
 \usepackage{verbatim} 		%multiline comment
 \usepackage{pgfplots}
-\usepackage{enumitem}
 %\overfullrule=3mm % memperlihatkan overfull 
 %=============================================================================
 
@@ -74,10 +73,10 @@
 % Mode default adalah 'template' yang menghasilkan isian berwarna merah, 
 % aktifkan salah satu mode di bawah ini :
 %=============================================================================
-\mode{bimbingan} 		% untuk keperluan bimbingan
+%\mode{bimbingan} 		% untuk keperluan bimbingan
 %\mode{sidang} 			% untuk sidang 1
 %\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
-%\mode{final} 			% untuk mencetak buku skripsi 
+\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -197,9 +196,9 @@
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda
 %=============================================================================
 \namanpm{Kevin Jonathan}{2014730020}
-\tanggal{10}{5}{2019}         %isi bulan dengan angka
+\tanggal{10}{Mei}{2019}
 \pembimbing{\CEN}{}    
-\penguji{\NAT}{\LCA} 
+\penguji{\LCA}{\RDL} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -215,8 +214,8 @@
 % - gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
 % - judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
 %=============================================================================
-\judulINA{Ant Colony Optimization}
-\judulENG{Aco}
+\judulINA{ACO FLOWSHOP}
+\judulENG{ACO FLOWSHOP}
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN X
@@ -228,8 +227,16 @@
 % - hilangkan tanda << & >>, dan isi sesuai dengan data anda
 % - langsung mulai setelah '{' awal, jangan mulai menulis di baris bawahnya
 %=============================================================================
-\abstrakINA{<<Tuliskan abstrak anda di sini, dalam bahasa Indonesia>>}
-\abstrakENG{<<Tuliskan abstrak anda di sini, dalam bahasa Inggris>>} 
+\abstrakINA{Lorem ipsum dolor sit amet, ex quo duis discere facilis, gloriatur democritum mea ex. Eu periculis voluptatum assueverit eam, in mea oblique adipisci hendrerit, illud aliquando ne ius. Cu invidunt constituam vix, vidisse moderatius reprehendunt his cu. Movet graece ne sit.
+	
+	Cu omnis homero omnium nec, eu ubique mollis vivendo eos. Et soleat mandamus scriptorem duo. Ne eos alii euripidis sententiae. Soleat quaestio sit id, eam delenit fuisset assueverit an. In mei laboramus voluptatum. Usu cu possim impetus, pri inermis consulatu et, an affert abhorreant vis.
+	
+	Usu an mediocrem dissentiunt delicatissimi. Cum dolores propriae cu. Ad sonet officiis perpetua vel, at legimus luptatum eos, pro dictas invidunt suscipiantur te. Ut movet dicit eleifend eam, vis ei graece splendide, est nihil splendide ex. Ad minim abhorreant cum, usu ut voluptua intellegat. Et his feugait epicurei, mazim nihil cu vix, nec amet dicam volumus ut.}
+\abstrakENG{Lorem ipsum dolor sit amet, ex quo duis discere facilis, gloriatur democritum mea ex. Eu periculis voluptatum assueverit eam, in mea oblique adipisci hendrerit, illud aliquando ne ius. Cu invidunt constituam vix, vidisse moderatius reprehendunt his cu. Movet graece ne sit.
+	
+	Cu omnis homero omnium nec, eu ubique mollis vivendo eos. Et soleat mandamus scriptorem duo. Ne eos alii euripidis sententiae. Soleat quaestio sit id, eam delenit fuisset assueverit an. In mei laboramus voluptatum. Usu cu possim impetus, pri inermis consulatu et, an affert abhorreant vis.
+	
+	Usu an mediocrem dissentiunt delicatissimi. Cum dolores propriae cu. Ad sonet officiis perpetua vel, at legimus luptatum eos, pro dictas invidunt suscipiantur te. Ut movet dicit eleifend eam, vis ei graece splendide, est nihil splendide ex. Ad minim abhorreant cum, usu ut voluptua intellegat. Et his feugait epicurei, mazim nihil cu vix, nec amet dicam volumus ut.} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -241,8 +248,8 @@
 % - kunciENG: keywords in english
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\kunciINA{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Indonesia>>}
-\kunciENG{<<Tuliskan di sini kata-kata kunci yang anda gunakan, dalam bahasa Inggris>>}
+\kunciINA{Ayam, Den, Lapeh}
+\kunciENG{Chicken, Den, Lapeh}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -252,7 +259,7 @@
 % Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\untuk{<<kepada siapa anda mempersembahkan skripsi ini\ldots?>>}
+\untuk{Skripsi ini dipersembahkan untuk mamah dan papah}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -263,7 +270,11 @@
 % kasih kepada yang telah membantu anda bla bla bla ....  
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda.
 %=============================================================================
-\prakata{<<Tuliskan kata pengantar dari anda di sini \ldots>>} 
+\prakata{Lorem ipsum dolor sit amet, ex quo duis discere facilis, gloriatur democritum mea ex. Eu periculis voluptatum assueverit eam, in mea oblique adipisci hendrerit, illud aliquando ne ius. Cu invidunt constituam vix, vidisse moderatius reprehendunt his cu. Movet graece ne sit.
+	
+	Cu omnis homero omnium nec, eu ubique mollis vivendo eos. Et soleat mandamus scriptorem duo. Ne eos alii euripidis sententiae. Soleat quaestio sit id, eam delenit fuisset assueverit an. In mei laboramus voluptatum. Usu cu possim impetus, pri inermis consulatu et, an affert abhorreant vis.
+	
+	Usu an mediocrem dissentiunt delicatissimi. Cum dolores propriae cu. Ad sonet officiis perpetua vel, at legimus luptatum eos, pro dictas invidunt suscipiantur te. Ut movet dicit eleifend eam, vis ei graece splendide, est nihil splendide ex. Ad minim abhorreant cum, usu ut voluptua intellegat. Et his feugait epicurei, mazim nihil cu vix, nec amet dicam volumus ut.} 
 %=============================================================================
 
 %_____________________________________________________________________________

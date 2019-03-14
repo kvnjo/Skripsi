@@ -1,0 +1,26 @@
+\babel@toc {bahasa}{}
+\contentsline {chapter}{Kata Pengantar}{xv}{chapter*.1}% 
+\contentsline {chapter}{Daftar Isi}{xvii}{section*.2}% 
+\contentsline {chapter}{Daftar Gambar}{xix}{section*.3}% 
+\contentsline {chapter}{Daftar Tabel}{xxi}{section*.4}% 
+\contentsline {chapter}{\numberline {1}Pendahuluan}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Latar Belakang}{1}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Rumusan Masalah}{1}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Tujuan}{1}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Batasan Masalah}{2}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Metodologi}{2}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Sistematika Pembahasan}{3}{section.1.6}% 
+\contentsline {chapter}{\numberline {2}Landasan Teori}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Penjadwalan Secara Umum}{5}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Istilah-Istilah dalam Penjadwalan}{5}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}Klasifikasi Masalah Penjadwalan}{6}{subsection.2.1.2}% 
+\contentsline {section}{\numberline {2.2}Penjadwalan Flow Shop}{6}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Definisi Secara Umum}{7}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Karakteristik Penjadwalan Flow Shop}{8}{subsection.2.2.2}% 
+\contentsline {section}{\numberline {2.3}Multi Objective Flow Shop Scheduling}{8}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Ant Colony Optimization}{8}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Algoritma Ant Colony Optimization pada penjadwalan Flow Shop}{9}{subsection.2.4.1}% 
+\contentsline {section}{\numberline {2.5}Tailard Benchmark}{12}{section.2.5}% 
+\contentsline {chapter}{Daftar Referensi}{15}{chapter*.5}% 
+\contentsline {chapter}{\numberline {A}Kode Program}{17}{appendix.A}% 
+\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{19}{appendix.B}% 
