@@ -1,0 +1,192 @@
+\chapter{Analisa Masalah}
+\label{chap:analisa}
+
+	Pada bab ini akan dibahas mengenai hasil analisa permasalahan flow shop dan segalah hal yang berkaitan dengan analisa permasalahan tersebut.
+	Pada bab ini juga akan dibahas sekilas mengenai rancangan awal dari perangkat lunak yang memungkinkan diaplikasikannya
+	algoritma ant colony pada permasalahan multi objective flow shop.
+	
+	
+\section{Analisa Kasus}
+
+	Proses penjadwalan Flow Shop adalah salah satu metode penjadwalan produksi di mana urutan mesin 
+	yang digunakan untuk setiap proses dalam seluruh pekerjaan harus sama. Pekerjaan-pekerjaan tersebut
+	akan dikerjakan pada mesin-mesin yang ada dengan urutan pengerjaan yang dipilih. Masing - masing
+	proses akan dikerjakan secara sistematis dan terurut. Data-data masukan yang dibutuhkan
+	dalam menjalankan sebuah proses penjadwalan flow shop adalah:
+	\begin{itemize}
+		\item Banyaknya pekerjaan
+		\item Banyaknya mesin
+		\item Detail waktu pengerjaan setiap pekerjaan
+		
+	\end{itemize}
+
+	Setiap pekerjaan memiliki waktu proses yang berbeda satu sama lain pada tiap mesin. Variasi
+	urutan pengerjaan yang berbeda biasanya akan menghasilkan waktu pengerjaan / makespan yang
+	berbeda pula. Proses penjadwalan ini penting untuk diperhatikan, karena mampu mempengaruhi
+	lama waktu penggunaan fasilitas dalam suatu proses produksi. Urutan pengerjaan yang baik dapat
+	dicari dengan menggunakan suatu algoritma optimisasi. Diharapkan dengan algoritma optimisasi
+	tersebut, urutan pengerjaan yang menghasilkan makespan / waktu pengerjaan minimum dapat
+	ditemukan.
+	
+	Salah satu algoritma yang dapat digunakan untuk optimisasi penjadwalan flow shop
+	adalah algoritma ant colony. Tingkat keoptimalan setiap algoritma berbeda-beda, oleh karena
+	itu perlu dibuat sebuah perangkat lunak untuk optimisasi penjadwalan flow shop dengan
+	menggunakan algoritma ant colony. Algoritma ant colony akan menerima data masukan dari suatu
+	kasus flow shop, kemudian akan mencari urutan pengerjaan / solusi yang paling optimal dari
+	kasus tersebut selain itu kita juga dapat mencari kriteria lain yang kita inginkan.
+	
+	Algoritma ant colony akan mencari urutan pengerjaan yang menghasilkan makespan / waktu
+	pengerjaan yang paling minimum. Algoritma ant colony merepresentasikan pilihan solusi-solusi
+	yang ada sebagai jalur yang akan dilalui oleh semut dan memberikan data feromon sebagai panduan
+	untuk melewati jalur-jalur tersebut. Dengan panduan tersebut, semut-semut tersebut diasumsikan
+	mampu memilih jalur yang paling optimal.
+	Proses optimisasi dengan menggunakan algoritma ant colony perlu memperhatikan beberapa
+	hal. 
+	
+	Algoritma ant colony perlu mengetahui bagaimana cara merepresentasikan suatu solusi sebagai
+	jalur, bagaimana cara menggunakan panduan feromon untuk pemilihan jalur, bagaimana cara
+	membaca dan menyimpan suatu data feromon, serta banyak hal lainnya. Tata cara tersebut mampu
+	mempengaruhi hasil optimisasi dari algoritma ant colony.
+\section{Analisa Algoritma Ant Colony Pada Penjadwalan Flow Shop}
+\subsection{Urutan Pengerjaan Proses Sebagai Jalur Semut}
+Algoritma ant colony akan membantu penentuan urutan pengambilan pekerjaan yang optimal. Oleh
+karena itu, algoritma ini akan merepresentasikan pilihan urutan pengambilan yang ada sebagai jalur. Jalur-jalur tersebut kemudian akan dilewati oleh semut-semut yang akan mencari solusi / urutan pengerjaan yang optimal. Pilihan urutan pengerjaan yang ada dapat dicari dengan menggunakan fungsi permutasi terhadap jumlah pekerjaan.
+
+Sebagai contoh, jika dimisalkan terdapat 3 buah pekerjaan, maka dengan fungsi permutasi akan
+didapatkan jalur-jalur urutan pengerjaan (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), dan (3,2,1). Fungsi
+permutasi ini digunakan dengan mempertimbangkan sifat dari proses penjadwalan flow shop.
+Masing-masing proses dari pekerjaan pasti akan dikerjakan dan hanya akan dikerjakan sebanyak
+satu kali.
+
+\subsection{Memilih Urutan Pengerjaan / Jalur}
+Makespan yang dihasilkan oleh masing-masing urutan pengerjaan biasanya akan bernilai berbeda.
+Penentuan urutan pengerjaan yang optimal akan ditentukan oleh nilai feromon yang akan diberikan
+oleh semut-semut yang telah disebar. Nilai feromon tersebut dapat disimpan dengan cara yang
+beragam.
+
+Dalam kasus hybrid ow shop juga terdapat beragam cara dalam menyimpan feromon dan
+penentuan urutan yang lebih optimal. Salah satunya adalah dengan menyimpan nilai feromon
+sebagai panduan pemilihan pekerjaan selanjutnya. Nilai feromon akan menyimpan kecenderungan
+dipilihnya suatu pekerjaan setelah dipilihnya suatu pekerjaan yang lain. Nilai feromon tersebut
+akan disimpan dalam bentuk matriks 2 dimensi.
+
+Indeks pertama dari matriks akan merepresentasikan nomor pekerjaan yang sebelumnya dipilih.
+Indeks kedua akan merepresentasikan pekerjaan yang selanjutnya akan dipilih. Sebagai contoh,
+pada matriks indeks [1][2] menunjukkan kecenderungan dipilihnya pekerjaan 2 setelah dipilihnya
+pekerjaan 1. Nilai feromon pada matriks dengan 2 indeks yang sama akan selalu bernilai 0.
+
+Perlu diingat pula bahwa algoritma ant colony akan selalu memberikan peluang dipilihnya sebuah
+solusi. Meskipun solusi tersebut sudah dapat dianggap sebagai solusi yang kurang optimal,
+solusi tersebut harus tetap memiliki kemungkinan untuk dipilih. Oleh karena itu, indeks nilai feromon
+harus tetap dapat mengacu pada terpilihnya suatu solusi-solusi yang ada. Nilai feromon
+masing-masing indeks matriks (kecuali matriks dengan dua indeks yang sama) tidak akan lebih kecil
+dari 1. Hal ini dilakukan agar setiap solusi masih memiliki kemungkinan untuk dipilih, meskipun
+kemungkinannya sangat kecil.
+
+\subsection{Proses Pemilihan Urutan Pengerjaan / Jalur Semut}
+Pada proses pemilihan jalur, nilai feromon yang disimpan oleh suatu indeks matriks mempengaruhi
+kemungkinan dipilihnya suatu pekerjaan. Semakin besar nilai feromon pada suatu indeks, semakin
+besar kemungkinan dipilihnya pekerjaan yang dirujuk oleh indeks matriks tersebut. Berdasarkan
+rumus untuk pemilihan jalur pada algoritma ant colony, diperlukan nilai objektif dan nilai feromon
+untuk penentuan pemilihan suatu jalur. Pada proses pemilihan pekerjaan ini, nilai objektif
+yang digunakan adalah 1 untuk semua indeks matriks. Proses pemilihan pekerjaan ini hanya akan
+dipengaruhi oleh nilai feromon yang disimpan pada indeks matriks yang ada.
+
+Penentuan pekerjaan mana yang akan dipilih dapat dimulai dengan melakukan proses randomisasi
+suatu angka. Angka tersebut akan berada di kisaran nilai 1 hingga jumlah nilai feromon
+dari indeks-indeks yang mungkin dilibatkan. Penentuan pekerjaan dilakukan dengan menambahkan
+secara satu per satu nilai feromon dari indeks yang terlibat dimulai dari nilai 0. Jika setelah
+ditambahkan nilai dari suatu indeks, jumlah nilai telah melebihi angka hasil randomisasi, maka
+pekerjaan yang dirujuk indeks tersebut akan dipilih sebagai pekerjaan yang diambil.
+
+\subsection{Rumus - rumus ACO dalam penjadwalan Flow Shop}
+\begin{enumerate}
+	\item Pemilihan Jalur\\
+	Kemungkinan dipilihnya sebuah jalur dipengaruhi oleh kekuatan feromon pada jalur tersebut. Semakin
+	kuat / banyak feromon pada suatu jalur, maka jalur tersebut akan lebih sering / berkemungkinan
+	lebih besar untuk dipilih. Kemungkinan terpilihnya masing-masing jalur dapat dihitung
+	dengan menggunakan rumus yang terdapat pada rumus berikut :
+	
+	\begin{equation}
+	P_{k}^{xy} = \frac{T_{xy}^{\alpha}\cdot n_{xy}^{\beta}}{\sum_{x \in availeble_z}(T_{xz}^{\alpha }\cdot n_{xz}^{\beta })}
+	\end{equation}\\
+	
+	
+	Keterangan dari rumus tersebut sebgai berikut :
+	
+	$P_{k}^{xy}$ : nilai kemungkinan terpilihnya jalur xy oleh semut k \\
+	$T_{xy}$ : nilai feromon untuk jalur xy\\
+	$n_{xy}$ : nilai objektif untuk jalur xy\\
+	$\alpha$ : persentase pengaruh nilai feromon\\
+	$\beta$  : persentase pengaruh nilai objektif\\
+	
+	
+	T menunjukkan kekuatan / jumlah feromon yang terdapat pada suatu jalur, sedangkan n menunjukkan
+	nilai objektif yang dimiliki oleh suatu jalur. Nilai objektif pada suatu jalur menunjukkan
+	pengetahuan / nilai awal mengenai jalur tersebut. Nilai awal tersebut biasanya berupa informasi
+	mengenai jalur tersebut yang diketahui sejak awal dan mampu memberikan pengaruh pada proses
+	pemilihan jalur.
+	
+	Contoh informasi yang dapat menjadi nilai objektif adalah panjang jalur, banyaknya belokan,
+	panjang jalur pertama, dan lain-lain. Nilai awal suatu jalur dapat bernilai sama dengan jalur yang
+	lain. Apabila proses pencarian yang dilakukan tidak memiliki informasi apapun atau bersifat blind-
+	search, nilai objektif ini dapat diabaikan. Besar pengaruh dari kekuatan feromon dan nilai objektif
+	terhadap kemungkinan terpilihnya sebuah jalur dapat diatur dengan menggunakan rasio tertentu.
+	
+	\item Update Nilai Feromon\\
+	Ketika terdapat semut yang menyelesaikan sebuah jalur, feromon pada jalur tersebut akan diubah.
+	Jumlah feromon pada jalur yang dilewati semut tersebut akan ditambah. Dalam proses penambahan
+	feromon, nilai feromon yang baru pada jalur ditentukan dengan rumus berikut:
+	
+	\begin{equation}
+	T_{xy} \leftarrow (1-P) \cdot T_{xy} + \sum_{k}\Delta T_{xy}^k
+	\end{equation}\\
+	
+	Keterangan dari rumus tersebut sebgai berikut :
+	
+	$P$ : persentase evaporasi feromon (dalam desimal)\\
+	$T_{xy}$ : nilai feromon untuk jalur xy\\
+	$\Delta T_{xy}^k$ : nilai feromon yang akan ditambahkan oleh semut k pada jalur xy\\
+	
+	Pada rumus tersebut, jumlah feromon awal yang terdapat pada suatu jalur akan mengalami
+	pengurangan berdasarkan rasio penguapan feromon P, lalu kemudian akan ditambah dengan nilai
+	feromon masing-masing semut yang melewati jalur tersebut. Nilai feromon masing-masing semut
+	dapat berupa sebuah nilai tetap atau nilai lainnya yang mampu memberikan nilai lebih pada jalur
+	yang lebih cepat (lama proses, jumlah semut yang telah melewati suatu jalur, dan lain-lain).
+	Aturan mengenai kapan dan bagaimana suatu proses penambahan feromon dilakukan dapat
+	bervariasi. Aturan-aturan tersebut biasanya ditentukan berdasarkan jenis permasalahan yang ingin
+	dioptimisasi. Proses penambahan feromon dapat dilakukan ketika terdapat semut yang telah selesai
+	berjalan pada jalurnya atau pada saat seluruh semut telah selesai berjalan pada jalurnya. 
+	
+	Proses perubahan jumlah feromon dapat dilakukan dengan menambahkan sebuah nilai atau penambahkan
+	nilai feromon dengan suatu persentase tertentu.
+	Proses perubahan jumlah feromon dapat dilakukan di seluruh jalur atau hanya di jalur yang
+	dilewati suatu semut. Jika perubahan dilakukan di seluruh jalur, fungsi / aturan khusus untuk
+	perubahan jumlah feromon sebagai berikut.
+	
+	\begin{equation}
+	\Delta T_{xy}^k = \begin{cases}
+	Q, \mbox{jika semut {\bf k} menggunakan jalur {\bf xy}} .\newline
+	0, \mbox{untuk lainnya}.
+	\end{cases}
+	\end{equation}\\
+	
+	
+	Keterangam aturan khusus di atas sebagai berikut :
+	
+	$\Delta T_{xy}^k$ : nilai feromon yang akan ditambahkan oleh semut k pada jalur xy\\
+	$Q$ 				: nilai penambahan feromon (dapat berupa suatu angka tetap / hasil perhitungan)\\
+	
+	\item Kondisi berhenti\\
+	Selama proses optimisasi, algoritma ant colony akan secara terus menerus melakukan fase pelatihan.
+	Pada setiap fase pelatihan akan dibentuk semut-semut yang akan memilih suatu jalur secara acak
+	berdasarkan nilai feromon. Setelah suatu fase pelatihan selesai, perubahan nilai feromon akan
+	dilakukan berdasarkan jalur-jalur yang dipilih oleh masing-masing semut.
+	
+	Proses optimisasi akan diberhentikan jika suatu kondisi telah terpenuhi. Waktu berhentinya
+	suatu proses pelatihan dapat ditentukan dengan berbagai parameter. Proses pelatihan dapat dianggap
+	selesai jika telah melewati beberapa fase pelatihan, jumlah semut yang disebar sudah cukup
+	banyak, atau jika sudah terdapat jalur yang dipilih oleh sebagian besar semut. Proses pelatihan
+	juga dapat diberhentikan jika fase-fase pelatihan terakhir selalu memberikan hasil solusi yang sama
+	/ tidak mampu membentuk solusi lain yang lebih optimal.
+\end{enumerate}
