@@ -25,7 +25,14 @@
 \contentsline {section}{\numberline {3.1}Analisa Kasus}{15}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Analisa Algoritma Ant Colony Pada Penjadwalan Flow Shop}{16}{section.3.2}% 
 \contentsline {subsection}{\numberline {3.2.1}Urutan Pengerjaan Proses Sebagai Jalur Semut}{16}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Rumus - rumus ACO dalam penjadwalan Flow Shop}{16}{subsection.3.2.2}% 
-\contentsline {chapter}{Daftar Referensi}{19}{chapter*.5}% 
-\contentsline {chapter}{\numberline {A}Kode Program}{21}{appendix.A}% 
-\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{23}{appendix.B}% 
+\contentsline {subsection}{\numberline {3.2.2}Memilih Urutan Pengerjaan / Jalur}{16}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}Proses Pemilihan Urutan Pengerjaan / Jalur Semut}{16}{subsection.3.2.3}% 
+\contentsline {subsection}{\numberline {3.2.4}Proses Penambahan Feromon}{17}{subsection.3.2.4}% 
+\contentsline {subsection}{\numberline {3.2.5}Rumus - rumus Algoritma Ant Colony dalam penjadwalan Flow Shop}{18}{subsection.3.2.5}% 
+\contentsline {section}{\numberline {3.3}Proses Optimisasi Penjadwalan Flow Shop Dengan Menggunakan Algoritma Ant Colony}{19}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Jumlah Semut}{20}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Aturan Berhenti}{20}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}Analisis Perangkat Lunak}{21}{section.3.4}% 
+\contentsline {chapter}{Daftar Referensi}{23}{chapter*.5}% 
+\contentsline {chapter}{\numberline {A}Kode Program}{25}{appendix.A}% 
+\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{27}{appendix.B}% 

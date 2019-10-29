@@ -48,58 +48,118 @@
 	membaca dan menyimpan suatu data feromon, serta banyak hal lainnya. Tata cara tersebut mampu
 	mempengaruhi hasil optimisasi dari algoritma ant colony.
 \section{Analisa Algoritma Ant Colony Pada Penjadwalan Flow Shop}
-\subsection{Urutan Pengerjaan Proses Sebagai Jalur Semut}
-Algoritma ant colony akan membantu penentuan urutan pengambilan pekerjaan yang optimal. Oleh
-karena itu, algoritma ini akan merepresentasikan pilihan urutan pengambilan yang ada sebagai jalur. Jalur-jalur tersebut kemudian akan dilewati oleh semut-semut yang akan mencari solusi / urutan pengerjaan yang optimal. Pilihan urutan pengerjaan yang ada dapat dicari dengan menggunakan fungsi permutasi terhadap jumlah pekerjaan.
 
-Sebagai contoh, jika dimisalkan terdapat 3 buah pekerjaan, maka dengan fungsi permutasi akan
-didapatkan jalur-jalur urutan pengerjaan (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), dan (3,2,1). Fungsi
-permutasi ini digunakan dengan mempertimbangkan sifat dari proses penjadwalan flow shop.
-Masing-masing proses dari pekerjaan pasti akan dikerjakan dan hanya akan dikerjakan sebanyak
-satu kali.
+\subsection{Urutan Pengerjaan Proses Sebagai Jalur Semut}
+	Algoritma ant colony akan membantu penentuan urutan pengambilan pekerjaan yang optimal. Oleh
+	karena itu, algoritma ini akan merepresentasikan pilihan urutan pengambilan yang ada sebagai jalur. Jalur-jalur tersebut kemudian akan dilewati oleh semut-semut yang akan mencari solusi / urutan pengerjaan yang optimal. Pilihan urutan pengerjaan yang ada dapat dicari dengan menggunakan fungsi permutasi terhadap jumlah pekerjaan.
+
+	Sebagai contoh, jika dimisalkan terdapat 3 buah pekerjaan, maka dengan fungsi permutasi akan
+	didapatkan jalur-jalur urutan pengerjaan (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), dan (3,2,1). Fungsi
+	permutasi ini digunakan dengan mempertimbangkan sifat dari proses penjadwalan flow shop.
+	Masing-masing proses dari pekerjaan pasti akan dikerjakan dan hanya akan dikerjakan sebanyak
+	satu kali.
 
 \subsection{Memilih Urutan Pengerjaan / Jalur}
-Makespan yang dihasilkan oleh masing-masing urutan pengerjaan biasanya akan bernilai berbeda.
-Penentuan urutan pengerjaan yang optimal akan ditentukan oleh nilai feromon yang akan diberikan
-oleh semut-semut yang telah disebar. Nilai feromon tersebut dapat disimpan dengan cara yang
-beragam.
+	Makespan yang dihasilkan oleh masing-masing urutan pengerjaan biasanya akan bernilai berbeda.
+	Penentuan urutan pengerjaan yang optimal akan ditentukan oleh nilai feromon yang akan diberikan
+	oleh semut-semut yang telah disebar. Nilai feromon tersebut dapat disimpan dengan cara yang
+	beragam.
 
-Dalam kasus hybrid ow shop juga terdapat beragam cara dalam menyimpan feromon dan
-penentuan urutan yang lebih optimal. Salah satunya adalah dengan menyimpan nilai feromon
-sebagai panduan pemilihan pekerjaan selanjutnya. Nilai feromon akan menyimpan kecenderungan
-dipilihnya suatu pekerjaan setelah dipilihnya suatu pekerjaan yang lain. Nilai feromon tersebut
-akan disimpan dalam bentuk matriks 2 dimensi.
+	Dalam kasus flow shop juga terdapat beragam cara dalam menyimpan feromon dan
+	penentuan urutan yang lebih optimal. Salah satunya adalah dengan menyimpan nilai feromon
+	sebagai panduan pemilihan pekerjaan selanjutnya. Nilai feromon akan menyimpan kecenderungan
+	dipilihnya suatu pekerjaan setelah dipilihnya suatu pekerjaan yang lain. Nilai feromon tersebut
+	akan disimpan dalam bentuk matriks 2 dimensi.
 
-Indeks pertama dari matriks akan merepresentasikan nomor pekerjaan yang sebelumnya dipilih.
-Indeks kedua akan merepresentasikan pekerjaan yang selanjutnya akan dipilih. Sebagai contoh,
-pada matriks indeks [1][2] menunjukkan kecenderungan dipilihnya pekerjaan 2 setelah dipilihnya
-pekerjaan 1. Nilai feromon pada matriks dengan 2 indeks yang sama akan selalu bernilai 0.
+	Indeks pertama dari matriks akan merepresentasikan nomor pekerjaan yang sebelumnya dipilih.
+	Indeks kedua akan merepresentasikan pekerjaan yang selanjutnya akan dipilih. Sebagai contoh,
+	pada matriks indeks [1][2] menunjukkan kecenderungan dipilihnya pekerjaan 2 setelah dipilihnya
+	pekerjaan 1. Nilai feromon pada matriks dengan 2 indeks yang sama akan selalu bernilai 0.
 
-Perlu diingat pula bahwa algoritma ant colony akan selalu memberikan peluang dipilihnya sebuah
-solusi. Meskipun solusi tersebut sudah dapat dianggap sebagai solusi yang kurang optimal,
-solusi tersebut harus tetap memiliki kemungkinan untuk dipilih. Oleh karena itu, indeks nilai feromon
-harus tetap dapat mengacu pada terpilihnya suatu solusi-solusi yang ada. Nilai feromon
-masing-masing indeks matriks (kecuali matriks dengan dua indeks yang sama) tidak akan lebih kecil
-dari 1. Hal ini dilakukan agar setiap solusi masih memiliki kemungkinan untuk dipilih, meskipun
-kemungkinannya sangat kecil.
+	Perlu diingat pula bahwa algoritma ant colony akan selalu memberikan peluang dipilihnya sebuah
+	solusi. Meskipun solusi tersebut sudah dapat dianggap sebagai solusi yang kurang optimal,
+	solusi tersebut harus tetap memiliki kemungkinan untuk dipilih. Oleh karena itu, indeks nilai feromon
+	harus tetap dapat mengacu pada terpilihnya suatu solusi-solusi yang ada. Nilai feromon
+	masing-masing indeks matriks (kecuali matriks dengan dua indeks yang sama) tidak akan lebih kecil
+	dari 1. Hal ini dilakukan agar setiap solusi masih memiliki kemungkinan untuk dipilih, meskipun
+	kemungkinannya sangat kecil.
 
 \subsection{Proses Pemilihan Urutan Pengerjaan / Jalur Semut}
-Pada proses pemilihan jalur, nilai feromon yang disimpan oleh suatu indeks matriks mempengaruhi
-kemungkinan dipilihnya suatu pekerjaan. Semakin besar nilai feromon pada suatu indeks, semakin
-besar kemungkinan dipilihnya pekerjaan yang dirujuk oleh indeks matriks tersebut. Berdasarkan
-rumus untuk pemilihan jalur pada algoritma ant colony, diperlukan nilai objektif dan nilai feromon
-untuk penentuan pemilihan suatu jalur. Pada proses pemilihan pekerjaan ini, nilai objektif
-yang digunakan adalah 1 untuk semua indeks matriks. Proses pemilihan pekerjaan ini hanya akan
-dipengaruhi oleh nilai feromon yang disimpan pada indeks matriks yang ada.
+	Pada proses pemilihan jalur, nilai feromon yang disimpan oleh suatu indeks matriks mempengaruhi
+	kemungkinan dipilihnya suatu pekerjaan. Semakin besar nilai feromon pada suatu indeks, semakin
+	besar kemungkinan dipilihnya pekerjaan yang dirujuk oleh indeks matriks tersebut. Berdasarkan
+	rumus untuk pemilihan jalur pada algoritma ant colony, diperlukan nilai objektif dan nilai feromon
+	untuk penentuan pemilihan suatu jalur. Pada proses pemilihan pekerjaan ini, nilai objektif
+	yang digunakan adalah 1 untuk semua indeks matriks. Proses pemilihan pekerjaan ini hanya akan
+	dipengaruhi oleh nilai feromon yang disimpan pada indeks matriks yang ada.
 
-Penentuan pekerjaan mana yang akan dipilih dapat dimulai dengan melakukan proses randomisasi
-suatu angka. Angka tersebut akan berada di kisaran nilai 1 hingga jumlah nilai feromon
-dari indeks-indeks yang mungkin dilibatkan. Penentuan pekerjaan dilakukan dengan menambahkan
-secara satu per satu nilai feromon dari indeks yang terlibat dimulai dari nilai 0. Jika setelah
-ditambahkan nilai dari suatu indeks, jumlah nilai telah melebihi angka hasil randomisasi, maka
-pekerjaan yang dirujuk indeks tersebut akan dipilih sebagai pekerjaan yang diambil.
+	Penentuan pekerjaan mana yang akan dipilih dapat dimulai dengan melakukan proses randomisasi
+	suatu angka. Angka tersebut akan berada di kisaran nilai 1 hingga jumlah nilai feromon
+	dari indeks-indeks yang mungkin dilibatkan. Penentuan pekerjaan dilakukan dengan menambahkan
+	secara satu per satu nilai feromon dari indeks yang terlibat dimulai dari nilai 0. Jika setelah
+	ditambahkan nilai dari suatu indeks, jumlah nilai telah melebihi angka hasil randomisasi, maka
+	pekerjaan yang dirujuk indeks tersebut akan dipilih sebagai pekerjaan yang diambil.
 
-\subsection{Rumus - rumus ACO dalam penjadwalan Flow Shop}
+Gambar....
+
+	Berdasarkan Gambar 3.1, Dapat dilihat bahwa masing-masing dari pekerjaan tersebut memiliki
+	kemungkinan untuk dipilih sesuai dengan nilai feromonnya masing-masing. Sebagai contoh, 
+	pekerjaan 1 memiliki rentang 5 buah angka dari 11 buah angka untuk dipilih sebagai pekerjaan
+	yang akan diambil. Proses penentuan pekerjaan ini tentu saja memperhatikan rumus awal untuk penentuan 
+	jalur dalam algoritma ant colony. Mengingat nilai objektif yang akan digunakan adalah 1, proses pemilihan 
+	jalur hanya akan ditentukan berdasarkan nilai feromon dari jalur-jalur yang terlibat. Berdasarkan rumus tersebut, 
+	dapat disimpulkan bahwa kemungkinan dipilihnya suatu pekerjaan adalah sebanyak jumlah feromon yang disimpan untuk 
+	pekerjaan tersebut dari jumlah total feromon dari semua pekerjaan yang mungkin dipilih.
+
+
+	Proses pemilihan jalur dilakukan secara bertahap, dimulai dari pemilihan jalur pertama. Untuk
+	pemilihan jalur pertama, nilai feromon yang mempengaruhi terpilihnya suatu jalur merupakan
+	jumlah nilai feromon pada matriks dengan indeks kedua yang merujuk pada jalur tersebut. Sebagai
+	contoh, jika dimisalkan terdapat 2 buah pekerjaan, maka jumlah nilai matriks pada indeks [1][1]
+	dan indeks [2][1] merupakan nilai feromon untuk terpilihnya pekerjaan 1 untuk dikerjakan pertama
+	kali.
+
+
+	Untuk pemilihan pekerjaan selanjutnya dilakukan dengan representasi normal dari matriks tersebut.
+	Indeks pertama berfungsi sebagai penunjuk pekerjaan yang diambil sebelumnya dan indeks
+	kedua merupakan penunjuk pekerjaan yang akan diambil selanjutnya. Proses pemilihan ini akan
+	memperhatikan pekerjaan-pekerjaan yang sebelumnya telah dipilih. Sebagai contoh, jika dimisalkan
+	terdapat 4 buah pekerjaan dan urutan pekerjaan yang sudah dipilih adalah [1,2], maka indeks matriks
+	yang akan diperhatikan dalam proses pemilihan hanya indeks matriks [2][3] dan [2][4]. Indeks
+	matriks [2][1] tidak diperhatikan karena sudah diambil untuk dikerjakan pertama kali.
+
+
+\subsection{Proses Penambahan Feromon}
+
+	Setiap solusi yang dicoba akan menghasilkan makespan yang berbeda-beda. Nilai makespan yang
+	dihasilkan mempengaruhi tingkat keoptimalan dari solusi tersebut. Semakin kecil nilai makespan
+	yang dihasilkan, semakin besar tingkat keoptimalan dari suatu solusi.
+
+	Nilai feromon yang disimpan harus mampu mempengaruhi semut-semut untuk lebih sering memilih
+	jalur yang lebih optimal. Oleh karena itu, nilai feromon pada solusi optimal harus lebih cepat
+	bertambah. Hal tersebut dapat dilakukan dengan memanipulasi banyak feromon yang ditambahkan.
+	Semakin kecil nilai makespan yang dihasilkan, semakin besar nilai feromon yang akan disimpan
+	atau ditambahkan.
+
+	Nilai feromon yang akan ditambahkan merupakan hasil proses pengurangan antara nilai ma-
+	kespan yang dihasilkan dengan suatu nilai tetap. Nilai tetap yang akan digunakan merupakan salah
+	satu nilai makespan yang dihasilkan dari solusi yang akan dianggap sebagai nilai tengah dari ma-
+	kespan yang mungkin dihasilkan. Solusi yang akan dijadikan nilai tengah ini merupakan solusi yang
+	menggunakan urutan nama / nomor pekerjaan sebagai urutan pengerjaan. Sebagai contoh, jika
+	terdapat 3 buah pekerjaan, maka solusi yang dijadikan nilai tengah adalah solusi dengan urutan
+	pengerjaan [1,2,3].
+
+	Banyaknya feromon yang ditambahkan tidak akan bernilai negatif. Jika feromon yang ditambahkan
+	bernilai negatif, maka penambahan feromon dari solusi tersebut tidak akan dilakukan. Penambahan
+	feromon akan dilakukan pada indeks-indeks matriks tertentu berdasarkan solusi yang
+	diambil. Sebagai contoh, jika solusi yang diambil adalah [2,1,3], maka indeks-indeks matriks yang
+	akan ditambahkan feromonnya adalah indeks matriks [2,1] dan [1,3]. Dengan ditambahkannya
+	matriks pada indeks-indeks tersebut, diharapkan indeks matriks tersebut akan lebih sering diacu
+	dalam proses pengambilan jalur. Dengan ditambahkannya feromon pada indeks-indeks tersebut
+	juga diharapkan solusi dengan urutan pengerjaan [2,1,3] akan lebih sering diambil.
+
+
+\subsection{Rumus - rumus Algoritma Ant Colony dalam penjadwalan Flow Shop}
 \begin{enumerate}
 	\item Pemilihan Jalur\\
 	Kemungkinan dipilihnya sebuah jalur dipengaruhi oleh kekuatan feromon pada jalur tersebut. Semakin
@@ -190,3 +250,102 @@ pekerjaan yang dirujuk indeks tersebut akan dipilih sebagai pekerjaan yang diamb
 	juga dapat diberhentikan jika fase-fase pelatihan terakhir selalu memberikan hasil solusi yang sama
 	/ tidak mampu membentuk solusi lain yang lebih optimal.
 \end{enumerate}
+
+\section{Proses Optimisasi Penjadwalan Flow Shop Dengan Menggunakan Algoritma Ant Colony}
+
+	Pada saat melakukan proses optimisasi, algoritma ant colony akan melakukan proses pelatihan
+	secara berulang-ulang. Pada setiap proses pelatihan, algoritma ant colony menyebarkan sejumlah
+	semut yang akan mengerjakan kasus flow shop sesuai solusi yang dipilih masing-masing
+	semut. Solusi-solusi tersebut dipilih secara acak berdasarkan nilai feromon yang disimpan. Solusi solusi
+	terbaik yang telah dipilih oleh suatu semut akan disimpan dan dibandingkan dengan solusi
+	terbaik dari proses pelatihan sebelumnya.
+	
+	Penambahan dan evaporasi nilai feromon yang disimpan akan dilakukan setiap suatu fase pelatihan
+	dari algoritma ant colony selesai dilakukan. Nilai feromon yang ditambahkan akan disesuaikan
+	dengan solusi dan hasil yang didapat oleh masing-masing semut. Semakin baik hasil yang diberikan
+	suatu solusi, semakin banyak nilai feromon yang ditambahkan pada indeks feromon yang mengacu
+	pada solusi tersebut. Proses pelatihan akan terus dilakukan hingga suatu kondisi berhenti dicapai.
+	Kondisi berhenti tersebut merupakan penanda bahwa hasil solusi yang dipilih sudah dapat dianggap
+	sebagai solusi yang optimal.
+	
+	Algoritma ant colony merupakan algoritma optimisasi yang cukup terkenal. Keunggulan-keunggulan
+	dari algoritma ini diantaranya adalah :
+	\begin{itemize}
+		\item Mampu diaplikasikan pada berbagai macam permasalahan.
+		\item Mampu memberikan salah satu solusi yang dapat dianggap baik secara cepat.
+	\end{itemize}
+
+	Sedangkan kekurangan algoritma ini adalah :
+	\begin{itemize}
+		\item Solusi terbaik pasti ditemukan, akan tetapi tidak ada lama waktu yang pasti untuk ditemukannya
+		solusi optimal tersebut.
+		\item Analisa secara teori tidak mungkin dilakukan, karena menggunakan pengambilan solusi secara
+		acak dan tidak tetap.
+	\end{itemize}
+
+	Untuk menangani kelemahan-kelemahan tersebut, algoritma ant colony perlu menjabarkan jumlah
+	pelatihan yang akan dilakukan dan banyaknya semut yang akan disebar pada satu kali proses
+	pelatihan. Hal-hal tersebut perlu ditentukan agar proses pelatihan mampu menemukan solusi yang
+	optimal dalam waktu yang relatif cepat. Semakin banyak proses pelatihan dan jumlah semut yang
+	disebar, semakin besar kemungkinan ditemukannya solusi yang optimal. Akan tetapi pada saat
+	yang bersamaan akan meningkatkan waktu pelaksanaan proses optimisasi. Baik atau tidaknya suatu
+	proses optimisasi ditentukan oleh tingkat keoptimalan solusi yang dihasilkan dan waktu yang
+	diperlukan untuk proses optimisasi.
+	
+	\subsection{Jumlah Semut}
+	
+	Jumlah semut dalam proses optimisasi algoritma ant colony sangat berpengaruh pada tingkat keoptimalan
+	dari solusi yang dihasilkan. Semakin banyak jumlah semut yang disebar, maka tingkat
+	keoptimalan solusi yang diberikan akan cenderung lebih baik. Akan tetapi semakin banyak semut
+	yang disebar akan menambah tingkat kompleksitas algoritma ini dan menambah waktu yang diperlukan
+	untuk proses optimisasi. Jumlah semut yang disebar perlu ditentukan agar algoritma mampu
+	memberikan solusi yang dapat dianggap cukup baik dalam waktu yang relatif cepat.
+	
+	Pencarian solusi optimal untuk suatu kasus flow shop dapat dilakukan secara brute force.
+	Pencarian solusi secara brute force dapat dianggap sebagai cara yang paling tidak efisien. Brute
+	force akan menjabarkan solusi-solusi yang ada dan mencoba penyelesaian dengan menggunakan
+	masing-masing solusi tersebut. Jika proses optimisasi diaplikasikan pada sebuah permasalahan,
+	sebaiknya proses optimisasi tersebut dapat berjalan lebih cepat dibandingkan dengan cara brute
+	force.
+	
+	Jika permasalahan flow shop akan diselesaikan secara brute force, maka setiap solusi
+	yang ada akan dijabarkan. Solusi-solusi pada flow shop dapat dicari dengan melakukan
+	proses fungsi kombinasi pada banyaknya pekerjaan yang ada. Dilihat dari sisi kompleksitas, cara
+	brute force memiliki tingkat kompleksitas n!, di mana n merupakan banyaknya pekerjaan yang ada.
+	
+	Jumlah semut yang akan disebar sebaiknya kurang dari tingkat kompleksitas dengan cara brute
+	force tersebut. Hal ini dilakukan agar optimisasi algoritma ant colony ini menjadi relatif lebih cepat
+	dibandingkan dengan cara brute force. Jumlah semut yang optimal masih belum diketahui, oleh
+	karena itu sekurang-kurangnya perlu diketahui pengaruh dari jumlah semut yang disebar terhadap
+	hasil optimisasi algoritma ini.
+	
+	
+	\subsection{Aturan Berhenti}
+	
+	Ada berbagai cara yang dapat dipakai dalam menentukan waktu berhenti dari proses optimisasi
+	algoritma ant colony. Beberapa parameter yang dapat digunakan untuk penentuan waktu berhenti
+	di antaranya
+	\begin{itemize}
+		\item Nilai data masukan yang diberikan : algoritma akan terus melakukan pelatihan sebanyak n
+		kali, di mana n memiliki hubungan aritmatik dengan salah satu data masukan kasus.
+		\item Sesuai dengan keinginan pengguna : algoritma akan terus melakukan pelatihan hingga pengguna
+		merasa hasil akhir yang diberikan sudah cukup optimal.
+	\end{itemize}
+	Perlu diingat pula bahwa salah satu dari kekurangan algoritma ant colony adalah tidak adanya
+	lama waktu yang pasti untuk ditemukannya solusi yang paling optimal. Algoritma ant colony
+	menggunakan proses randomisasi untuk penentuan solusi-solusi optimal. Meskipun proses randomisasi
+	tetap dipengaruhi oleh feromon-feromon pada indeks matriks, tidak berarti bahwa solusi yang
+	lebih optimal akan selalu terpilih. Proses randomisasi pada algoritma tetap memiliki kemungkinan
+	terpilihnya solusi yang kurang optimal secara terus menerus.
+	
+	Berdasarkan hal-hal tersebut, aturan berhenti algoritma ini akan disesuaikan dengan keinginan
+	pengguna. Jika aturan berhenti algoritma dilakukan berdasarkan nilai data masukan, hasil yang
+	akan diberikan belum tentu dapat dianggap sebagai hasil yang baik. Tidak ada jaminan bahwa hasil
+	akhir yang baik jika dilakukan proses pelatihan sebanyak n kali. Jika aturan berhenti disesuaikan
+	dengan data keluaran yang dihasilkan, belum tentu data keluaran yang diberikan merupakan solusi
+	yang baik. Algoritma ant colony memiliki kemungkinan memilih solusi yang kurang optimal secara
+	terus menerus, meskipun kemungkinan tersebut sangatlah kecil.
+	
+	\section{Analisis Perangkat Lunak}
+	
+	
