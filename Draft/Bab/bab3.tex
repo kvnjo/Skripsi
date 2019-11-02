@@ -348,4 +348,79 @@ Gambar....
 	
 	\section{Analisis Perangkat Lunak}
 	
+	Dengan tujuan untuk mengatasi permasalahan yang dipaparkan dalam bab - bab sebelumnya, maka dirancang perangkat
+	lunak yang mampu melakukan klasifikasi permasalahan flowshop tersebut. Perangkat lunak
+	yang dibuat dapat melakukan fitur-fitur berikut ini :
+	\begin{itemize}
+		\item Perangkat lunak dapat membaca masukan data permasalahan flowshop yang berupa file .txt.
+		\item Perangkat lunak dapat melakukan pelatihan menggunakan data dari Tailard.
+		\item Perangkat lunak dapat menampilkan makespan dan urutan pengerjaan dari job yang ada.
+		]item Perangkat lunak dapat menamilkan nilai utilitas dari mesin yang ada.
+	\end{itemize}
+
+	\newpage
+	\subsection{Use Case Diagram}
+	
+	Perangat Lunak yang dibuat akan mampu berinteraksi dengan pengguna. Pengguna akan mampu
+	menjabarkan kasus flow shop yang ingin dicari hasil optimalnya. Pengguna juga akan dapat
+	mampu mengatur kapan dan bagaimana berlangsungnya suatu proses optimisasi. Untuk mewujudkan
+	interaksi tersebut, berikut adalah rancangan use case diagram yang menjabarkan hal-hal
+	yang mampu dilakukan pengguna melalui perangkat lunak ini.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.35]{UseCaseSkripsi}
+		\caption[Use Case Diagram]{Use Case Diagram}
+		\label{fig:usecasediagram}
+	\end{figure}
+	Penjelasan diagram :
+	\begin{itemize}
+		\item Memilih kasus Flow Shop\\
+		Pengguna dapat memilih kasus flow shop yang ingin dicari hasil optimalnya. Kasus
+		tersebut akan dijabarkan dalam sebuah file teks dengan format penulisan tertentu. Pengguna
+		dapat memilih salah satu file teks tersebut sebagai kasus flow shop yang ingin dicari
+		hasil optimalnya. Pengguna hanya dapat melakukan proses optimisasi dengan menggunakan
+		algoritma ant colony setelah pengguna memilih kasus flow shop yang ingin dioptimisasi.
+		\item Menjalankan 1 fase pelatihan algoritma ant colony\\
+		Pengguna dapat menjalankan 1 kali fase pelatihan dari algoritma ant colony. Proses pelatihan
+		ini akan mengembalikan informasi mengenai hasil optimal (makespan dan nilai utilitas mesin) yang 
+		didapat pada fase pelatihan	ini.
+		\item Melakukan proses optimasi dengan menggunakan algoritma ant colony\\
+		Proses optimisasi ini akan menjalankan fase pelatihan algoritma ant colony secara terus 
+		menerus hingga kondisi berhenti yang ditentukan tercapai. Hasil makespan dan nilai utilitas yang
+		didapatkan pada setiap fase pelatihan akan ditampilkan.
+	\end{itemize}
+	
+	\subsection{Input dan Output}
+	
+	Perangkat lunak akan mampu menerima data masukan dari sebuah file teks. File teks tersebut
+	akan berisi detail mengenai kasus flow shop yang ingin diselesaikan. File teks tersebut akan
+	berisi detil mengenai banyaknya mesin, banyaknya pekerjaan dan detil waktu proses untuk setiap pekerjaan. 
+	File teks tersebut akan memiliki format penulisan
+	tertentu, agar file teks tersebut dapat dikonversi menjadi suatu kasus hybrid flow shop.
+	
+	GAMBAR DAN PENJELSAN LANJUT
+	
+	\subsection{Flow Chart Proses Optimasi}
+	
+	Proses optimisasi dengan algoritma ant colony dilakukan setelah mengkonversi data masukan menjadi
+	sebuah kasus flow shop. Algoritma ant colony akan menyesuaikan diri dengan kasus flow shop yang ingin 
+	dicari solusi optimalnya. Algoritma ant colony akan melakukan proses optimisasi dengan cara melakukan 
+	proses pelatihan secara berulang-ulang hingga suatu kondisi berhenti tercapai. Berikut adalah flow chart 
+	mengenai bagaimana perangkat lunak ini akan melakukan proses optimisasi dengan menggunakan algoritma ant colony.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.40]{Flowchart}
+		\caption[Flowchart]{Flowchart Optimasi}
+		\label{fig:flowchartoptimasi}
+	\end{figure}
+	
+	
+	\subsection{Diagram Kelas Secara Umum}
+	
+	Diagram kelas digunakan untuk memberikan gambaran mengenai kelas-kelas yang terdapat dalam
+	sistem perangkat lunak yang dibangun serta hubungan antar kelasnya. Pada bab ini hanya akan ditampilkan
+	diagram kelas secara umum saja. Untuk lebih detailnya akan dijelaskan pada bab selanjutnya. Diagram kelas
+	tersebut sebagai berikut : 
+	
+	Gambarrrr
 	

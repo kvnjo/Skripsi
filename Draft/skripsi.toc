@@ -33,6 +33,11 @@
 \contentsline {subsection}{\numberline {3.3.1}Jumlah Semut}{20}{subsection.3.3.1}% 
 \contentsline {subsection}{\numberline {3.3.2}Aturan Berhenti}{20}{subsection.3.3.2}% 
 \contentsline {section}{\numberline {3.4}Analisis Perangkat Lunak}{21}{section.3.4}% 
-\contentsline {chapter}{Daftar Referensi}{23}{chapter*.5}% 
-\contentsline {chapter}{\numberline {A}Kode Program}{25}{appendix.A}% 
-\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{27}{appendix.B}% 
+\contentsline {subsection}{\numberline {3.4.1}Use Case Diagram}{22}{subsection.3.4.1}% 
+\contentsline {subsection}{\numberline {3.4.2}Input dan Output}{22}{subsection.3.4.2}% 
+\contentsline {subsection}{\numberline {3.4.3}Flow Chart Proses Optimasi}{23}{subsection.3.4.3}% 
+\contentsline {subsection}{\numberline {3.4.4}Diagram Kelas Secara Umum}{23}{subsection.3.4.4}% 
+\contentsline {chapter}{\numberline {4}Perancangan Perangkat Lunak}{25}{chapter.4}% 
+\contentsline {chapter}{Daftar Referensi}{27}{chapter*.5}% 
+\contentsline {chapter}{\numberline {A}Kode Program}{29}{appendix.A}% 
+\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{31}{appendix.B}% 
