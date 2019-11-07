@@ -43,15 +43,19 @@
 	Proses optimisasi dengan menggunakan algoritma ant colony perlu memperhatikan beberapa
 	hal. 
 	
-	Algoritma ant colony perlu mengetahui bagaimana cara merepresentasikan suatu solusi sebagai
+	Algoritma ant colony perlu mengetahui bagaimana cara merepresentasikan suatu solusi sebagai 
 	jalur, bagaimana cara menggunakan panduan feromon untuk pemilihan jalur, bagaimana cara
 	membaca dan menyimpan suatu data feromon, serta banyak hal lainnya. Tata cara tersebut mampu
 	mempengaruhi hasil optimisasi dari algoritma ant colony.
+	
 \section{Analisa Algoritma Ant Colony Pada Penjadwalan Flow Shop}
 
 \subsection{Urutan Pengerjaan Proses Sebagai Jalur Semut}
 	Algoritma ant colony akan membantu penentuan urutan pengambilan pekerjaan yang optimal. Oleh
-	karena itu, algoritma ini akan merepresentasikan pilihan urutan pengambilan yang ada sebagai jalur. Jalur-jalur tersebut kemudian akan dilewati oleh semut-semut yang akan mencari solusi / urutan pengerjaan yang optimal. Pilihan urutan pengerjaan yang ada dapat dicari dengan menggunakan fungsi permutasi terhadap jumlah pekerjaan.
+	karena itu, algoritma ini akan merepresentasikan pilihan urutan pengambilan yang ada sebagai jalur. 
+	Jalur-jalur tersebut kemudian akan dilewati oleh semut-semut yang akan mencari solusi / urutan pengerjaan 
+	yang optimal. Pilihan urutan pengerjaan yang ada dapat dicari dengan menggunakan fungsi permutasi terhadap 
+	jumlah pekerjaan.
 
 	Sebagai contoh, jika dimisalkan terdapat 3 buah pekerjaan, maka dengan fungsi permutasi akan
 	didapatkan jalur-jalur urutan pengerjaan (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), dan (3,2,1). Fungsi
@@ -100,17 +104,6 @@
 	ditambahkan nilai dari suatu indeks, jumlah nilai telah melebihi angka hasil randomisasi, maka
 	pekerjaan yang dirujuk indeks tersebut akan dipilih sebagai pekerjaan yang diambil.
 
-Gambar....
-
-	Berdasarkan Gambar 3.1, Dapat dilihat bahwa masing-masing dari pekerjaan tersebut memiliki
-	kemungkinan untuk dipilih sesuai dengan nilai feromonnya masing-masing. Sebagai contoh, 
-	pekerjaan 1 memiliki rentang 5 buah angka dari 11 buah angka untuk dipilih sebagai pekerjaan
-	yang akan diambil. Proses penentuan pekerjaan ini tentu saja memperhatikan rumus awal untuk penentuan 
-	jalur dalam algoritma ant colony. Mengingat nilai objektif yang akan digunakan adalah 1, proses pemilihan 
-	jalur hanya akan ditentukan berdasarkan nilai feromon dari jalur-jalur yang terlibat. Berdasarkan rumus tersebut, 
-	dapat disimpulkan bahwa kemungkinan dipilihnya suatu pekerjaan adalah sebanyak jumlah feromon yang disimpan untuk 
-	pekerjaan tersebut dari jumlah total feromon dari semua pekerjaan yang mungkin dipilih.
-
 
 	Proses pemilihan jalur dilakukan secara bertahap, dimulai dari pemilihan jalur pertama. Untuk
 	pemilihan jalur pertama, nilai feromon yang mempengaruhi terpilihnya suatu jalur merupakan
@@ -118,7 +111,6 @@ Gambar....
 	contoh, jika dimisalkan terdapat 2 buah pekerjaan, maka jumlah nilai matriks pada indeks [1][1]
 	dan indeks [2][1] merupakan nilai feromon untuk terpilihnya pekerjaan 1 untuk dikerjakan pertama
 	kali.
-
 
 	Untuk pemilihan pekerjaan selanjutnya dilakukan dengan representasi normal dari matriks tersebut.
 	Indeks pertama berfungsi sebagai penunjuk pekerjaan yang diambil sebelumnya dan indeks
@@ -159,97 +151,6 @@ Gambar....
 	juga diharapkan solusi dengan urutan pengerjaan [2,1,3] akan lebih sering diambil.
 
 
-\subsection{Rumus - rumus Algoritma Ant Colony dalam penjadwalan Flow Shop}
-\begin{enumerate}
-	\item Pemilihan Jalur\\
-	Kemungkinan dipilihnya sebuah jalur dipengaruhi oleh kekuatan feromon pada jalur tersebut. Semakin
-	kuat / banyak feromon pada suatu jalur, maka jalur tersebut akan lebih sering / berkemungkinan
-	lebih besar untuk dipilih. Kemungkinan terpilihnya masing-masing jalur dapat dihitung
-	dengan menggunakan rumus yang terdapat pada rumus berikut :
-	
-	\begin{equation}
-	P_{k}^{xy} = \frac{T_{xy}^{\alpha}\cdot n_{xy}^{\beta}}{\sum_{x \in availeble_z}(T_{xz}^{\alpha }\cdot n_{xz}^{\beta })}
-	\end{equation}\\
-	
-	
-	Keterangan dari rumus tersebut sebgai berikut :
-	
-	$P_{k}^{xy}$ : nilai kemungkinan terpilihnya jalur xy oleh semut k \\
-	$T_{xy}$ : nilai feromon untuk jalur xy\\
-	$n_{xy}$ : nilai objektif untuk jalur xy\\
-	$\alpha$ : persentase pengaruh nilai feromon\\
-	$\beta$  : persentase pengaruh nilai objektif\\
-	
-	
-	T menunjukkan kekuatan / jumlah feromon yang terdapat pada suatu jalur, sedangkan n menunjukkan
-	nilai objektif yang dimiliki oleh suatu jalur. Nilai objektif pada suatu jalur menunjukkan
-	pengetahuan / nilai awal mengenai jalur tersebut. Nilai awal tersebut biasanya berupa informasi
-	mengenai jalur tersebut yang diketahui sejak awal dan mampu memberikan pengaruh pada proses
-	pemilihan jalur.
-	
-	Contoh informasi yang dapat menjadi nilai objektif adalah panjang jalur, banyaknya belokan,
-	panjang jalur pertama, dan lain-lain. Nilai awal suatu jalur dapat bernilai sama dengan jalur yang
-	lain. Apabila proses pencarian yang dilakukan tidak memiliki informasi apapun atau bersifat blind-
-	search, nilai objektif ini dapat diabaikan. Besar pengaruh dari kekuatan feromon dan nilai objektif
-	terhadap kemungkinan terpilihnya sebuah jalur dapat diatur dengan menggunakan rasio tertentu.
-	
-	\item Update Nilai Feromon\\
-	Ketika terdapat semut yang menyelesaikan sebuah jalur, feromon pada jalur tersebut akan diubah.
-	Jumlah feromon pada jalur yang dilewati semut tersebut akan ditambah. Dalam proses penambahan
-	feromon, nilai feromon yang baru pada jalur ditentukan dengan rumus berikut:
-	
-	\begin{equation}
-	T_{xy} \leftarrow (1-P) \cdot T_{xy} + \sum_{k}\Delta T_{xy}^k
-	\end{equation}\\
-	
-	Keterangan dari rumus tersebut sebgai berikut :
-	
-	$P$ : persentase evaporasi feromon (dalam desimal)\\
-	$T_{xy}$ : nilai feromon untuk jalur xy\\
-	$\Delta T_{xy}^k$ : nilai feromon yang akan ditambahkan oleh semut k pada jalur xy\\
-	
-	Pada rumus tersebut, jumlah feromon awal yang terdapat pada suatu jalur akan mengalami
-	pengurangan berdasarkan rasio penguapan feromon P, lalu kemudian akan ditambah dengan nilai
-	feromon masing-masing semut yang melewati jalur tersebut. Nilai feromon masing-masing semut
-	dapat berupa sebuah nilai tetap atau nilai lainnya yang mampu memberikan nilai lebih pada jalur
-	yang lebih cepat (lama proses, jumlah semut yang telah melewati suatu jalur, dan lain-lain).
-	Aturan mengenai kapan dan bagaimana suatu proses penambahan feromon dilakukan dapat
-	bervariasi. Aturan-aturan tersebut biasanya ditentukan berdasarkan jenis permasalahan yang ingin
-	dioptimisasi. Proses penambahan feromon dapat dilakukan ketika terdapat semut yang telah selesai
-	berjalan pada jalurnya atau pada saat seluruh semut telah selesai berjalan pada jalurnya. 
-	
-	Proses perubahan jumlah feromon dapat dilakukan dengan menambahkan sebuah nilai atau penambahkan
-	nilai feromon dengan suatu persentase tertentu.
-	Proses perubahan jumlah feromon dapat dilakukan di seluruh jalur atau hanya di jalur yang
-	dilewati suatu semut. Jika perubahan dilakukan di seluruh jalur, fungsi / aturan khusus untuk
-	perubahan jumlah feromon sebagai berikut.
-	
-	\begin{equation}
-	\Delta T_{xy}^k = \begin{cases}
-	Q, \mbox{jika semut {\bf k} menggunakan jalur {\bf xy}} .\newline
-	0, \mbox{untuk lainnya}.
-	\end{cases}
-	\end{equation}\\
-	
-	
-	Keterangam aturan khusus di atas sebagai berikut :
-	
-	$\Delta T_{xy}^k$ : nilai feromon yang akan ditambahkan oleh semut k pada jalur xy\\
-	$Q$ 				: nilai penambahan feromon (dapat berupa suatu angka tetap / hasil perhitungan)\\
-	
-	\item Kondisi berhenti\\
-	Selama proses optimisasi, algoritma ant colony akan secara terus menerus melakukan fase pelatihan.
-	Pada setiap fase pelatihan akan dibentuk semut-semut yang akan memilih suatu jalur secara acak
-	berdasarkan nilai feromon. Setelah suatu fase pelatihan selesai, perubahan nilai feromon akan
-	dilakukan berdasarkan jalur-jalur yang dipilih oleh masing-masing semut.
-	
-	Proses optimisasi akan diberhentikan jika suatu kondisi telah terpenuhi. Waktu berhentinya
-	suatu proses pelatihan dapat ditentukan dengan berbagai parameter. Proses pelatihan dapat dianggap
-	selesai jika telah melewati beberapa fase pelatihan, jumlah semut yang disebar sudah cukup
-	banyak, atau jika sudah terdapat jalur yang dipilih oleh sebagian besar semut. Proses pelatihan
-	juga dapat diberhentikan jika fase-fase pelatihan terakhir selalu memberikan hasil solusi yang sama
-	/ tidak mampu membentuk solusi lain yang lebih optimal.
-\end{enumerate}
 
 \section{Proses Optimisasi Penjadwalan Flow Shop Dengan Menggunakan Algoritma Ant Colony}
 
@@ -326,8 +227,8 @@ Gambar....
 	algoritma ant colony. Beberapa parameter yang dapat digunakan untuk penentuan waktu berhenti
 	di antaranya
 	\begin{itemize}
-		\item Nilai data masukan yang diberikan : algoritma akan terus melakukan pelatihan sebanyak n
-		kali, di mana n memiliki hubungan aritmatik dengan salah satu data masukan kasus.
+		\item Nilai data keluaran yang dihasilkan : algoritma akan terus melakukan pelatihan hingga data
+		keluaran yang dihasilkan bernilai sama dengan data-data keluaran sebelumnya
 		\item Sesuai dengan keinginan pengguna : algoritma akan terus melakukan pelatihan hingga pengguna
 		merasa hasil akhir yang diberikan sudah cukup optimal.
 	\end{itemize}
@@ -337,14 +238,6 @@ Gambar....
 	tetap dipengaruhi oleh feromon-feromon pada indeks matriks, tidak berarti bahwa solusi yang
 	lebih optimal akan selalu terpilih. Proses randomisasi pada algoritma tetap memiliki kemungkinan
 	terpilihnya solusi yang kurang optimal secara terus menerus.
-	
-	Berdasarkan hal-hal tersebut, aturan berhenti algoritma ini akan disesuaikan dengan keinginan
-	pengguna. Jika aturan berhenti algoritma dilakukan berdasarkan nilai data masukan, hasil yang
-	akan diberikan belum tentu dapat dianggap sebagai hasil yang baik. Tidak ada jaminan bahwa hasil
-	akhir yang baik jika dilakukan proses pelatihan sebanyak n kali. Jika aturan berhenti disesuaikan
-	dengan data keluaran yang dihasilkan, belum tentu data keluaran yang diberikan merupakan solusi
-	yang baik. Algoritma ant colony memiliki kemungkinan memilih solusi yang kurang optimal secara
-	terus menerus, meskipun kemungkinan tersebut sangatlah kecil.
 	
 	\section{Analisis Perangkat Lunak}
 	
@@ -392,13 +285,42 @@ Gambar....
 	
 	\subsection{Input dan Output}
 	
-	Perangkat lunak akan mampu menerima data masukan dari sebuah file teks. File teks tersebut
-	akan berisi detail mengenai kasus flow shop yang ingin diselesaikan. File teks tersebut akan
-	berisi detil mengenai banyaknya mesin, banyaknya pekerjaan dan detil waktu proses untuk setiap pekerjaan. 
-	File teks tersebut akan memiliki format penulisan
-	tertentu, agar file teks tersebut dapat dikonversi menjadi suatu kasus hybrid flow shop.
+	Perangkat lunak akan mampu menerima data masukan dari sebuah file teks. File teks tersebut akan
+	berisi informasi mengenai banyaknya mesin, banyaknya pekerjaan, waktu proses untuk setiap pekerjaan, dan 
+	nilai upper beserta lower bound dari setiap kasus.
+	File teks tersebut akan memiliki format penulisan tertentu, agar file teks tersebut dapat dikonversi menjadi 
+	suatu kasus flow shop.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.75]{InputProgram}
+		\caption[Input Program]{Input Program}
+		\label{fig:inputprogram}
+	\end{figure}
+	Gambar di atas merupakan contoh file teks yang dapat diterima oleh program yang akan dibangun. File teks 
+	tersebut terdiri dari 20 pekerjaan dan 5 mesin. Penjelasan lengkap dari gambar tersebut sebagai berikut :
+	\begin{enumerate}
+		\item Baris pertama terdiri atas empat nilai.
+		\item Nilai pertama merupakan banyaknya pekerjaan.
+		\item Nilai kedua merupakan banyaknya mesin.
+		\item Nilai ketiga merupakan upper bound dari suatu kasus.
+		\item Nilai keempat merupakan lower bound dari suatu kasus.
+		\item Baris kedua hingga akhir merupakan waktu proses untuk setiap pekerjaan.
+	\end{enumerate}
+	Nilai upper bound akan dianggap sebagai nilai makespan optimal / nilai makespan target yang
+	ingin dicapai oleh proses optimisasi. Nilai lower bound akan dianggap sebagai nilai makespan minimal
+	yang mungkin dicapai dari suatu kasus. Nilai lower bound ini akan dijadikan batas nilai
+	makespan yang mungkin dihasilkan dari suatu kasus. Nilai lower bound ini akan digunakan untuk
+	pengujian perangkat lunak. Jika nilai makespan yang dihasilkan lebih kecil dari nilai lower bound,
+	maka kemungkinan terdapat kesalahan pada perangkat lunak.
 	
-	GAMBAR DAN PENJELSAN LANJUT
+	Setelah mengkonversi data masukan menjadi suatu kasus flow shop, perangkat lunak
+	akan melakukan proses optimisasi. Proses optimisasi akan menghasilkan suatu solusi berupa urutan
+	pengerjaan yang menghasilkan makespan yang dianggap optimal beserta nilai wait time dari setiap kasus. 
+	Perangkat lunak kemudian akan
+	menampilkan di layar pengguna mengenai urutan pengerjaan yang dianggap optimal, nilai
+	makespan yang dihasilkan, dan nilai wait time dari suatu kasus. Perangkat lunak juga akan menampilkan 
+	banyaknya pelatihan yang telah dilakukan untuk mendapat urutan pengerjaan tersebut.
+
 	
 	\subsection{Flow Chart Proses Optimasi}
 	
@@ -409,7 +331,7 @@ Gambar....
 	mengenai bagaimana perangkat lunak ini akan melakukan proses optimisasi dengan menggunakan algoritma ant colony.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.40]{Flowchart}
+		\includegraphics[scale=0.40]{FlowchartRevisi}
 		\caption[Flowchart]{Flowchart Optimasi}
 		\label{fig:flowchartoptimasi}
 	\end{figure}
@@ -421,6 +343,10 @@ Gambar....
 	sistem perangkat lunak yang dibangun serta hubungan antar kelasnya. Pada bab ini hanya akan ditampilkan
 	diagram kelas secara umum saja. Untuk lebih detailnya akan dijelaskan pada bab selanjutnya. Diagram kelas
 	tersebut sebagai berikut : 
-	
-	Gambarrrr
-	
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.40]{ClassDiagramUmumRev}
+		\caption[Diagram kelas umum]{Diagram kelas umum}
+		\label{fig:diagramkelasumum}
+	\end{figure}
+
