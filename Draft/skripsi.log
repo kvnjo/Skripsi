@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.12)  6 NOV 2019 08:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.12)  9 NOV 2019 08:13
 entering extended mode
 **./skripsi.tex
 (skripsi.tex
@@ -1225,7 +1225,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
-<./Gambar/Logo-UNPAR.png, id=194, 180.31364pt x 177.42285pt>
+<./Gambar/Logo-UNPAR.png, id=202, 180.31364pt x 177.42285pt>
 File: ./Gambar/Logo-UNPAR.png Graphic file (type png)
 <use ./Gambar/Logo-UNPAR.png>
 Package pdftex.def Info: ./Gambar/Logo-UNPAR.png  used on input line 401.
@@ -1360,30 +1360,30 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 20.
  [5]
-<./Gambar/JobShop.jpg, id=441, 475.7775pt x 154.32657pt>
+<./Gambar/JobShop.jpg, id=455, 475.7775pt x 154.32657pt>
 File: ./Gambar/JobShop.jpg Graphic file (type jpg)
 <use ./Gambar/JobShop.jpg>
 Package pdftex.def Info: ./Gambar/JobShop.jpg  used on input line 85.
 (pdftex.def)             Requested size: 237.88815pt x 77.16309pt.
-<./Gambar/FlowShop.jpg, id=443, 514.17094pt x 184.43906pt>
+<./Gambar/FlowShop.jpg, id=457, 514.17094pt x 184.43906pt>
 File: ./Gambar/FlowShop.jpg Graphic file (type jpg)
 <use ./Gambar/FlowShop.jpg>
 Package pdftex.def Info: ./Gambar/FlowShop.jpg  used on input line 98.
 (pdftex.def)             Requested size: 257.08484pt x 92.2193pt.
  [6 <./Gambar/JobShop.jpg>]
-<./Gambar/IlusFlowShop.jpg, id=453, 350.05782pt x 145.29282pt>
+<./Gambar/IlusFlowShop.jpg, id=467, 350.05782pt x 145.29282pt>
 File: ./Gambar/IlusFlowShop.jpg Graphic file (type jpg)
 <use ./Gambar/IlusFlowShop.jpg>
 Package pdftex.def Info: ./Gambar/IlusFlowShop.jpg  used on input line 120.
 (pdftex.def)             Requested size: 280.04662pt x 116.23439pt.
  [7 <./Gambar/FlowShop.jpg> <./Gambar/IlusFlowShop.jpg>]
-<./Gambar/gambar2.jpg, id=460, 225.84375pt x 93.34875pt>
+<./Gambar/gambar2.jpg, id=474, 225.84375pt x 93.34875pt>
 File: ./Gambar/gambar2.jpg Graphic file (type jpg)
 <use ./Gambar/gambar2.jpg>
 Package pdftex.def Info: ./Gambar/gambar2.jpg  used on input line 161.
 (pdftex.def)             Requested size: 191.96808pt x 79.3468pt.
  [8 <./Gambar/gambar2.jpg>]
-<./Gambar/gambar3.jpg, id=470, 322.95656pt x 235.63031pt>
+<./Gambar/gambar3.jpg, id=484, 322.95656pt x 235.63031pt>
 File: ./Gambar/gambar3.jpg Graphic file (type jpg)
 <use ./Gambar/gambar3.jpg>
 Package pdftex.def Info: ./Gambar/gambar3.jpg  used on input line 186.
@@ -1393,13 +1393,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-<./Gambar/gambar5.jpg, id=479, 354.57469pt x 344.78813pt>
+<./Gambar/gambar5.jpg, id=493, 354.57469pt x 344.78813pt>
 File: ./Gambar/gambar5.jpg Graphic file (type jpg)
 <use ./Gambar/gambar5.jpg>
 Package pdftex.def Info: ./Gambar/gambar5.jpg  used on input line 202.
 (pdftex.def)             Requested size: 283.66013pt x 275.83087pt.
 [10 <./Gambar/gambar3.jpg> <./Gambar/gambar5.jpg>]
-<./Gambar/gambar6.jpg, id=488, 581.17125pt x 253.69781pt>
+<./Gambar/gambar6.jpg, id=502, 581.17125pt x 253.69781pt>
 File: ./Gambar/gambar6.jpg Graphic file (type jpg)
 <use ./Gambar/gambar6.jpg>
 Package pdftex.def Info: ./Gambar/gambar6.jpg  used on input line 218.
@@ -1448,7 +1448,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [13]
-<./Gambar/tailard.jpg, id=516, 688.07062pt x 292.84406pt>
+<./Gambar/tailard.jpg, id=530, 688.07062pt x 292.84406pt>
 File: ./Gambar/tailard.jpg Graphic file (type jpg)
 <use ./Gambar/tailard.jpg>
 Package pdftex.def Info: ./Gambar/tailard.jpg  used on input line 365.
@@ -1458,7 +1458,7 @@ Overfull \hbox (12.17566pt too wide) in paragraph at lines 365--366
  [][] 
  []
 
-<./Gambar/tailard2.jpg, id=518, 529.22719pt x 315.42844pt>
+<./Gambar/tailard2.jpg, id=532, 529.22719pt x 315.42844pt>
 File: ./Gambar/tailard2.jpg Graphic file (type jpg)
 <use ./Gambar/tailard2.jpg>
 Package pdftex.def Info: ./Gambar/tailard2.jpg  used on input line 378.
@@ -1481,31 +1481,31 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [19] [20] [21]
-<./Gambar/UseCaseSkripsi.jpg, id=558, 1063.975pt x 671.50874pt>
+<./Gambar/UseCaseSkripsi.jpg, id=572, 1063.975pt x 671.50874pt>
 File: ./Gambar/UseCaseSkripsi.jpg Graphic file (type jpg)
 <use ./Gambar/UseCaseSkripsi.jpg>
-Package pdftex.def Info: ./Gambar/UseCaseSkripsi.jpg  used on input line 272.
+Package pdftex.def Info: ./Gambar/UseCaseSkripsi.jpg  used on input line 264.
 (pdftex.def)             Requested size: 372.39684pt x 235.03159pt.
-<./Gambar/InputProgram.jpg, id=559, 409.53pt x 191.21437pt>
+<./Gambar/InputProgram.jpg, id=573, 409.53pt x 191.21437pt>
 File: ./Gambar/InputProgram.jpg Graphic file (type jpg)
 <use ./Gambar/InputProgram.jpg>
-Package pdftex.def Info: ./Gambar/InputProgram.jpg  used on input line 303.
+Package pdftex.def Info: ./Gambar/InputProgram.jpg  used on input line 295.
 (pdftex.def)             Requested size: 307.14674pt x 143.41042pt.
  [22 <./Gambar/UseCaseSkripsi.jpg>]
-<./Gambar/FlowchartRevisi.jpg, id=564, 1082.0425pt x 731.73375pt>
+<./Gambar/FlowchartRevisi.jpg, id=578, 1082.0425pt x 731.73375pt>
 File: ./Gambar/FlowchartRevisi.jpg Graphic file (type jpg)
 <use ./Gambar/FlowchartRevisi.jpg>
-Package pdftex.def Info: ./Gambar/FlowchartRevisi.jpg  used on input line 342.
+Package pdftex.def Info: ./Gambar/FlowchartRevisi.jpg  used on input line 334.
 (pdftex.def)             Requested size: 432.80933pt x 292.68831pt.
  [23 <./Gambar/InputProgram.jpg>]
-<./Gambar/ClassDiagramUmumRev.jpg, id=575, 1205.50375pt x 678.535pt>
+<./Gambar/ClassDiagramUmumRev.jpg, id=589, 1205.50375pt x 678.535pt>
 File: ./Gambar/ClassDiagramUmumRev.jpg Graphic file (type jpg)
 <use ./Gambar/ClassDiagramUmumRev.jpg>
 Package pdftex.def Info: ./Gambar/ClassDiagramUmumRev.jpg  used on input line 3
-56.
+48.
 (pdftex.def)             Requested size: 482.19296pt x 271.40918pt.
 
-Overfull \hbox (12.72247pt too wide) in paragraph at lines 356--357
+Overfull \hbox (12.72247pt too wide) in paragraph at lines 348--349
  [][] 
  []
 
@@ -1519,31 +1519,49 @@ Overfull \hbox (12.72247pt too wide) in paragraph at lines 356--357
 
 ]
 Bab 4.
-) [27]
+<./Gambar/RancanganGrafis.png, id=602, 622.325pt x 435.6275pt>
+File: ./Gambar/RancanganGrafis.png Graphic file (type png)
+<use ./Gambar/RancanganGrafis.png>
+Package pdftex.def Info: ./Gambar/RancanganGrafis.png  used on input line 19.
+(pdftex.def)             Requested size: 404.50645pt x 283.15451pt.
+[27 <./Gambar/RancanganGrafis.png>] [28]
+<./Gambar/ClassDiagramLengkap.png, id=622, 1196.21906pt x 1319.68031pt>
+File: ./Gambar/ClassDiagramLengkap.png Graphic file (type png)
+<use ./Gambar/ClassDiagramLengkap.png>
+Package pdftex.def Info: ./Gambar/ClassDiagramLengkap.png  used on input line 5
+4.
+(pdftex.def)             Requested size: 502.40858pt x 554.26196pt.
+
+Overfull \hbox (32.9381pt too wide) in paragraph at lines 54--55
+ [][] 
+ []
+
+[29 <./Gambar/ClassDiagramLengkap.png>] [30] [31] [32] [33] [34] [35] [36]
+[37] [38] [39] [40] [41]) [42]
 \openout2 = `Bab/bab5.aux'.
 
- (Bab/bab5.tex [28
+ (Bab/bab5.tex
+Bab 5.
+) [43
 
 
 
 ]
-Bab 5.
-) [29]
 \openout2 = `Bab/bab6.aux'.
 
- (Bab/bab6.tex [30
+ (Bab/bab6.tex [44
 
 
 
 ]
 Bab 6.
-) [31] (skripsi.bbl [32
+) [45] (skripsi.bbl [46
 
 
-]) [33]
+]) [47]
 \openout2 = `Lampiran/lampA.aux'.
 
- (Lampiran/lampA.tex [34
+ (Lampiran/lampA.tex [48
 
 
 ]
@@ -1580,16 +1598,16 @@ LaTeX Font Warning: Font shape `OMS/fvm/m/it' undefined
 (Font)              using `OMS/fvm/m/n' instead
 (Font)              for symbol `textasteriskcentered' on input line 15.
 
-)) [35]
+)) [49]
 \openout2 = `Lampiran/lampB.aux'.
 
- (Lampiran/lampB.tex [36
+ (Lampiran/lampB.tex [50
 
 
 
 ]
 Lampiran B.
-) [37]
+) [51]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 438.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 438.
  (skripsi.aux (Bab/bab1.aux) (Bab/bab2.aux) (Bab/bab3.aux) (Bab/bab4.aux) (Bab/
@@ -1597,7 +1615,7 @@ bab5.aux) (Bab/bab6.aux) (Lampiran/lampA.aux) (Lampiran/lampB.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 438.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 438.
 Package rerunfilecheck Info: File `skripsi.out' has not changed.
-(rerunfilecheck)             Checksum: FBBEC532058136FF85F00895534C82C2;8790.
+(rerunfilecheck)             Checksum: 7B406BA0C31E231A313EC9850DF7E68C;9159.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1605,11 +1623,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 438.
  ) 
 Here is how much of TeX's memory you used:
- 45797 strings out of 492946
- 978293 string characters out of 3135498
- 1608827 words of memory out of 3000000
- 48575 multiletter control sequences out of 15000+200000
- 610367 words of font info for 144 fonts, out of 3000000 for 9000
+ 45851 strings out of 492946
+ 979043 string characters out of 3135498
+ 1609068 words of memory out of 3000000
+ 48588 multiletter control sequences out of 15000+200000
+ 611147 words of font info for 150 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
  82i,13n,138p,1051b,2168s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
@@ -1636,9 +1654,9 @@ onts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/lm/lmtt9.pfb>
-Output written on skripsi.pdf (59 pages, 1063357 bytes).
+Output written on skripsi.pdf (73 pages, 1386534 bytes).
 PDF statistics:
- 871 PDF objects out of 1000 (max. 8388607)
- 256 named destinations out of 1000 (max. 500000)
- 27595 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 963 PDF objects out of 1000 (max. 8388607)
+ 283 named destinations out of 1000 (max. 500000)
+ 27621 words of extra memory for PDF output out of 29859 (max. 10000000)
 
