@@ -41,10 +41,15 @@
 \contentsline {section}{\numberline {4.1}Perancangan Antarmuka Grafis}{27}{section.4.1}% 
 \contentsline {section}{\numberline {4.2}Diagram Kelas Lengkap}{28}{section.4.2}% 
 \contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{43}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Implementasi}{43}{section.5.1}% 
-\contentsline {subsection}{\numberline {5.1.1}Lingkungan Implementasi Perangkat Keras}{43}{subsection.5.1.1}% 
-\contentsline {subsection}{\numberline {5.1.2}Lingkungan Implementasi Perangkat Lunak}{43}{subsection.5.1.2}% 
-\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{45}{chapter.6}% 
-\contentsline {chapter}{Daftar Referensi}{47}{chapter*.5}% 
-\contentsline {chapter}{\numberline {A}Kode Program}{49}{appendix.A}% 
-\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{51}{appendix.B}% 
+\contentsline {section}{\numberline {5.1}Implementasi Algoritma}{43}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Pengujian Fungsional}{46}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Eksperimen}{48}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Spesifikasi Perangkat Keras}{48}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Lingkungan Implementasi Perangkat Lunak}{48}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}Cara Eksperimen}{48}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}Hasil Eksperimen}{49}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.5}Analisa Hasil Eksperimen}{49}{subsection.5.3.5}% 
+\contentsline {chapter}{\numberline {6}Kesimpulan dan Saran}{51}{chapter.6}% 
+\contentsline {chapter}{Daftar Referensi}{53}{chapter*.5}% 
+\contentsline {chapter}{\numberline {A}Kode Program}{55}{appendix.A}% 
+\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{57}{appendix.B}% 
